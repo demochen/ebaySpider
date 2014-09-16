@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+	<named-query name="SELECT_ITEMS">
+		<query>
+          select count(*) from com.ebay.domain.item.ItemDto  dto where dto.keyWords=:keyWords
+       </query>
+	</named-query>
+	<named-query name="SELECT_ALLITEMS">
+		<query>
+          select dto from com.ebay.domain.item.ItemDto  dto where dto.keyWords=:keyWords
+       </query>
+	</named-query>
+	<named-query name="SELECT_AvgPrice">
+		<query>
+          select avg(dto.price) from com.ebay.domain.item.ItemDto  dto where dto.keyWords=:keyWords
+       </query>
+	</named-query>
+	<named-query name="SELECT_MAXPRICEDTO">
+		<query>
+          select max(dto.price) from com.ebay.domain.item.ItemDto  dto where dto.keyWords=:keyWords
+       </query>
+	</named-query>
+	<named-query name="SELECT_MINPRICEDTO">
+		<query>
+          select min(dto.price) from com.ebay.domain.item.ItemDto  dto where dto.keyWords=:keyWords
+       </query>
+	</named-query>
+	<named-query name="SELECT_RECOMENDPRICE">
+		<query>
+          select new com.ebay.domain.item.RecomendPrice(min(dto.price),avg(dto.price),max(dto.price))  from com.ebay.domain.item.ItemDto  dto where dto.keyWords=:keyWords
+       </query>
+	</named-query>
+  	
+</entity-mappings>

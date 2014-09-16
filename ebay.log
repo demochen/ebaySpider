@@ -1,0 +1,1321 @@
+Returning cached instance of singleton bean 'competitorcontroller'
+Last-Modified value for [/searchCompetitor] is: -1
+Returning cached instance of singleton bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        count(*) as col_0_0_ 
+    from
+        SELLER sellerimpl0_ 
+    where
+        sellerimpl0_.SellerName=?
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+Result set row: 0
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        sellerimpl0_.Seller_ID as Seller1_3_,
+        sellerimpl0_.SellerName as SellerNa2_3_,
+        sellerimpl0_.Country as Country3_3_,
+        sellerimpl0_.CreateDate as CreateDa4_3_,
+        sellerimpl0_.Star as Star5_3_ 
+    from
+        SELLER sellerimpl0_ 
+    where
+        sellerimpl0_.SellerName=?
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+Result set row: 0
+Result row: EntityKey[com.ebay.domain.seller.SellerImpl#41]
+Resolving associations for [com.ebay.domain.seller.SellerImpl#41]
+Done materializing entity [com.ebay.domain.seller.SellerImpl#41]
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Written [com.ebay.domain.seller.SellerImpl@13ffe7f] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJacksonHttpMessageConverter@bb2118]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcher': assuming HandlerAdapter completed request handling
+Successfully completed request
+DispatcherServlet with name 'dispatcher' processing GET request for [/selectPring]
+Looking up handler method for path /selectPring
+Returning handler method [public java.util.List<com.ebay.domain.price.Pring> com.ebay.controller.CompetitorController.getPricing(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+Returning cached instance of singleton bean 'competitorcontroller'
+Last-Modified value for [/selectPring] is: -1
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        feedback0_.PRICE as col_0_0_,
+        count(*) as col_1_0_ 
+    from
+        FEEDBACK feedback0_ 
+    where
+        feedback0_.Seller=? 
+    group by
+        feedback0_.PRICE
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+Result set row: 0
+Result row: 
+Result set row: 1
+Result row: 
+Result set row: 2
+Result row: 
+Result set row: 3
+Result row: 
+Result set row: 4
+Result row: 
+Result set row: 5
+Result row: 
+Result set row: 6
+Result row: 
+Result set row: 7
+Result row: 
+Result set row: 8
+Result row: 
+Result set row: 9
+Result row: 
+Result set row: 10
+Result row: 
+Result set row: 11
+Result row: 
+Result set row: 12
+Result row: 
+Result set row: 13
+Result row: 
+Result set row: 14
+Result row: 
+Result set row: 15
+Result row: 
+Result set row: 16
+Result row: 
+Result set row: 17
+Result row: 
+Result set row: 18
+Result row: 
+Result set row: 19
+Result row: 
+Result set row: 20
+Result row: 
+Result set row: 21
+Result row: 
+Result set row: 22
+Result row: 
+Result set row: 23
+Result row: 
+Result set row: 24
+Result row: 
+Result set row: 25
+Result row: 
+Result set row: 26
+Result row: 
+Result set row: 27
+Result row: 
+Result set row: 28
+Result row: 
+Result set row: 29
+Result row: 
+Result set row: 30
+Result row: 
+Result set row: 31
+Result row: 
+Result set row: 32
+Result row: 
+Result set row: 33
+Result row: 
+Result set row: 34
+Result row: 
+Result set row: 35
+Result row: 
+Result set row: 36
+Result row: 
+Result set row: 37
+Result row: 
+Result set row: 38
+Result row: 
+Result set row: 39
+Result row: 
+Result set row: 40
+Result row: 
+Result set row: 41
+Result row: 
+Result set row: 42
+Result row: 
+Result set row: 43
+Result row: 
+Result set row: 44
+Result row: 
+Result set row: 45
+Result row: 
+Result set row: 46
+Result row: 
+Result set row: 47
+Result row: 
+Result set row: 48
+Result row: 
+Result set row: 49
+Result row: 
+Result set row: 50
+Result row: 
+Result set row: 51
+Result row: 
+Result set row: 52
+Result row: 
+Result set row: 53
+Result row: 
+Result set row: 54
+Result row: 
+Result set row: 55
+Result row: 
+Result set row: 56
+Result row: 
+Result set row: 57
+Result row: 
+Result set row: 58
+Result row: 
+Result set row: 59
+Result row: 
+Result set row: 60
+Result row: 
+Result set row: 61
+Result row: 
+Result set row: 62
+Result row: 
+Result set row: 63
+Result row: 
+Result set row: 64
+Result row: 
+Result set row: 65
+Result row: 
+Result set row: 66
+Result row: 
+Result set row: 67
+Result row: 
+Result set row: 68
+Result row: 
+Result set row: 69
+Result row: 
+Result set row: 70
+Result row: 
+Result set row: 71
+Result row: 
+Result set row: 72
+Result row: 
+Result set row: 73
+Result row: 
+Result set row: 74
+Result row: 
+Result set row: 75
+Result row: 
+Result set row: 76
+Result row: 
+Result set row: 77
+Result row: 
+Result set row: 78
+Result row: 
+Result set row: 79
+Result row: 
+Result set row: 80
+Result row: 
+Result set row: 81
+Result row: 
+Result set row: 82
+Result row: 
+Result set row: 83
+Result row: 
+Result set row: 84
+Result row: 
+Result set row: 85
+Result row: 
+Result set row: 86
+Result row: 
+Result set row: 87
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        max(feedback0_.PRICE) as col_0_0_ 
+    from
+        FEEDBACK feedback0_ 
+    where
+        feedback0_.Seller=?
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+Result set row: 0
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        count(*) as col_0_0_ 
+    from
+        FEEDBACK feedback0_ 
+    where
+        feedback0_.Seller=? 
+        and feedback0_.PRICE<?
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+binding parameter [2] as [DOUBLE] - 0.0
+Result set row: 0
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        count(*) as col_0_0_ 
+    from
+        FEEDBACK feedback0_ 
+    where
+        feedback0_.Seller=? 
+        and feedback0_.PRICE<? 
+        and feedback0_.PRICE>?
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+binding parameter [2] as [DOUBLE] - 109.75829268292684
+binding parameter [3] as [DOUBLE] - 0.0
+Result set row: 0
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        count(*) as col_0_0_ 
+    from
+        FEEDBACK feedback0_ 
+    where
+        feedback0_.Seller=? 
+        and feedback0_.PRICE>?
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+binding parameter [2] as [DOUBLE] - 109.75829268292684
+Result set row: 0
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Written [[com.ebay.domain.price.Pring@5605f4, com.ebay.domain.price.Pring@1a10ec3, com.ebay.domain.price.Pring@d04e13]] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJacksonHttpMessageConverter@bb2118]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcher': assuming HandlerAdapter completed request handling
+Successfully completed request
+DispatcherServlet with name 'dispatcher' processing GET request for [/selectRates]
+Looking up handler method for path /selectRates
+Returning handler method [public com.ebay.domain.seller.RecentFeedbackratings com.ebay.controller.CompetitorController.selectRates(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+Returning cached instance of singleton bean 'competitorcontroller'
+Last-Modified value for [/selectRates] is: -1
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        count(*) as col_0_0_ 
+    from
+        RecentFeedbackratings recentfeed0_ 
+    where
+        recentfeed0_.SellerName=?
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+Result set row: 0
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        recentfeed0_.RecentFeedRate_ID as RecentFe1_2_,
+        recentfeed0_.one_Negative as one2_2_,
+        recentfeed0_.one_Neutral as one3_2_,
+        recentfeed0_.one_Positive as one4_2_,
+        recentfeed0_.SellerName as SellerNa5_2_,
+        recentfeed0_.six_Negative as six6_2_,
+        recentfeed0_.six_Neutral as six7_2_,
+        recentfeed0_.six_Positive as six8_2_,
+        recentfeed0_.twe_Negative as twe9_2_,
+        recentfeed0_.twe_Neutral as twe10_2_,
+        recentfeed0_.twe_Positive as twe11_2_ 
+    from
+        RecentFeedbackratings recentfeed0_ 
+    where
+        recentfeed0_.SellerName=?
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+Result set row: 0
+Result row: EntityKey[com.ebay.domain.seller.RecentFeedbackratings#14]
+Resolving associations for [com.ebay.domain.seller.RecentFeedbackratings#14]
+Done materializing entity [com.ebay.domain.seller.RecentFeedbackratings#14]
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Written [com.ebay.domain.seller.RecentFeedbackratings@3b2a01] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJacksonHttpMessageConverter@bb2118]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcher': assuming HandlerAdapter completed request handling
+Successfully completed request
+DispatcherServlet with name 'dispatcher' processing GET request for [/selectRates]
+Looking up handler method for path /selectRates
+Returning handler method [public com.ebay.domain.seller.RecentFeedbackratings com.ebay.controller.CompetitorController.selectRates(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+Returning cached instance of singleton bean 'competitorcontroller'
+Last-Modified value for [/selectRates] is: -1
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        count(*) as col_0_0_ 
+    from
+        RecentFeedbackratings recentfeed0_ 
+    where
+        recentfeed0_.SellerName=?
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+Result set row: 0
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        recentfeed0_.RecentFeedRate_ID as RecentFe1_2_,
+        recentfeed0_.one_Negative as one2_2_,
+        recentfeed0_.one_Neutral as one3_2_,
+        recentfeed0_.one_Positive as one4_2_,
+        recentfeed0_.SellerName as SellerNa5_2_,
+        recentfeed0_.six_Negative as six6_2_,
+        recentfeed0_.six_Neutral as six7_2_,
+        recentfeed0_.six_Positive as six8_2_,
+        recentfeed0_.twe_Negative as twe9_2_,
+        recentfeed0_.twe_Neutral as twe10_2_,
+        recentfeed0_.twe_Positive as twe11_2_ 
+    from
+        RecentFeedbackratings recentfeed0_ 
+    where
+        recentfeed0_.SellerName=?
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+Result set row: 0
+Result row: EntityKey[com.ebay.domain.seller.RecentFeedbackratings#14]
+Resolving associations for [com.ebay.domain.seller.RecentFeedbackratings#14]
+Done materializing entity [com.ebay.domain.seller.RecentFeedbackratings#14]
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Written [com.ebay.domain.seller.RecentFeedbackratings@5ea634] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJacksonHttpMessageConverter@bb2118]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcher': assuming HandlerAdapter completed request handling
+Successfully completed request
+DispatcherServlet with name 'dispatcher' processing GET request for [/selectItems]
+Looking up handler method for path /selectItems
+Returning handler method [public java.util.List<com.ebay.domain.item.Item> com.ebay.controller.CompetitorController.selectSpecialItems(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+Returning cached instance of singleton bean 'competitorcontroller'
+Last-Modified value for [/selectItems] is: -1
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        feedback0_.ITEM_ID as col_0_0_,
+        feedback0_.ITEM_Name as col_1_0_,
+        feedback0_.PRICE as col_2_0_ 
+    from
+        FEEDBACK feedback0_ 
+    where
+        feedback0_.PRICE=(
+            select
+                max(feedback1_.PRICE) 
+            from
+                FEEDBACK feedback1_ 
+            where
+                feedback1_.Seller=?
+        )
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+Result set row: 0
+Result row: 
+Result set row: 1
+Result row: 
+Result set row: 2
+Result row: 
+Result set row: 3
+Result row: 
+Result set row: 4
+Result row: 
+Result set row: 5
+Result row: 
+Result set row: 6
+Result row: 
+Result set row: 7
+Result row: 
+Result set row: 8
+Result row: 
+Result set row: 9
+Result row: 
+Result set row: 10
+Result row: 
+Result set row: 11
+Result row: 
+Result set row: 12
+Result row: 
+Result set row: 13
+Result row: 
+Result set row: 14
+Result row: 
+Result set row: 15
+Result row: 
+Result set row: 16
+Result row: 
+Result set row: 17
+Result row: 
+Result set row: 18
+Result row: 
+Result set row: 19
+Result row: 
+Result set row: 20
+Result row: 
+Result set row: 21
+Result row: 
+Result set row: 22
+Result row: 
+Result set row: 23
+Result row: 
+Result set row: 24
+Result row: 
+Result set row: 25
+Result row: 
+Result set row: 26
+Result row: 
+Result set row: 27
+Result row: 
+Result set row: 28
+Result row: 
+Result set row: 29
+Result row: 
+Result set row: 30
+Result row: 
+Result set row: 31
+Result row: 
+Result set row: 32
+Result row: 
+Result set row: 33
+Result row: 
+Result set row: 34
+Result row: 
+Result set row: 35
+Result row: 
+Result set row: 36
+Result row: 
+Result set row: 37
+Result row: 
+Result set row: 38
+Result row: 
+Result set row: 39
+Result row: 
+Result set row: 40
+Result row: 
+Result set row: 41
+Result row: 
+Result set row: 42
+Result row: 
+Result set row: 43
+Result row: 
+Result set row: 44
+Result row: 
+Result set row: 45
+Result row: 
+Result set row: 46
+Result row: 
+Result set row: 47
+Result row: 
+Result set row: 48
+Result row: 
+Result set row: 49
+Result row: 
+Result set row: 50
+Result row: 
+Result set row: 51
+Result row: 
+Result set row: 52
+Result row: 
+Result set row: 53
+Result row: 
+Result set row: 54
+Result row: 
+Result set row: 55
+Result row: 
+Result set row: 56
+Result row: 
+Result set row: 57
+Result row: 
+Result set row: 58
+Result row: 
+Result set row: 59
+Result row: 
+Result set row: 60
+Result row: 
+Result set row: 61
+Result row: 
+Result set row: 62
+Result row: 
+Result set row: 63
+Result row: 
+Result set row: 64
+Result row: 
+Result set row: 65
+Result row: 
+Result set row: 66
+Result row: 
+Result set row: 67
+Result row: 
+Result set row: 68
+Result row: 
+Result set row: 69
+Result row: 
+Result set row: 70
+Result row: 
+Result set row: 71
+Result row: 
+Result set row: 72
+Result row: 
+Result set row: 73
+Result row: 
+Result set row: 74
+Result row: 
+Result set row: 75
+Result row: 
+Result set row: 76
+Result row: 
+Result set row: 77
+Result row: 
+Result set row: 78
+Result row: 
+Result set row: 79
+Result row: 
+Result set row: 80
+Result row: 
+Result set row: 81
+Result row: 
+Result set row: 82
+Result row: 
+Result set row: 83
+Result row: 
+Result set row: 84
+Result row: 
+Result set row: 85
+Result row: 
+Result set row: 86
+Result row: 
+Result set row: 87
+Result row: 
+Result set row: 88
+Result row: 
+Result set row: 89
+Result row: 
+Result set row: 90
+Result row: 
+Result set row: 91
+Result row: 
+Result set row: 92
+Result row: 
+Result set row: 93
+Result row: 
+Result set row: 94
+Result row: 
+Result set row: 95
+Result row: 
+Result set row: 96
+Result row: 
+Result set row: 97
+Result row: 
+Result set row: 98
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        feedback0_.ITEM_ID as col_0_0_,
+        feedback0_.ITEM_Name as col_1_0_,
+        feedback0_.PRICE as col_2_0_ 
+    from
+        FEEDBACK feedback0_ 
+    where
+        feedback0_.PRICE=(
+            select
+                min(feedback1_.PRICE) 
+            from
+                FEEDBACK feedback1_ 
+            where
+                feedback1_.Seller=?
+        )
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+Result set row: 0
+Result row: 
+Result set row: 1
+Result row: 
+Result set row: 2
+Result row: 
+Result set row: 3
+Result row: 
+Result set row: 4
+Result row: 
+Result set row: 5
+Result row: 
+Result set row: 6
+Result row: 
+Result set row: 7
+Result row: 
+Result set row: 8
+Result row: 
+Result set row: 9
+Result row: 
+Result set row: 10
+Result row: 
+Result set row: 11
+Result row: 
+Result set row: 12
+Result row: 
+Result set row: 13
+Result row: 
+Result set row: 14
+Result row: 
+Result set row: 15
+Result row: 
+Result set row: 16
+Result row: 
+Result set row: 17
+Result row: 
+Result set row: 18
+Result row: 
+Result set row: 19
+Result row: 
+Result set row: 20
+Result row: 
+Result set row: 21
+Result row: 
+Result set row: 22
+Result row: 
+Result set row: 23
+Result row: 
+Result set row: 24
+Result row: 
+Result set row: 25
+Result row: 
+Result set row: 26
+Result row: 
+Result set row: 27
+Result row: 
+Result set row: 28
+Result row: 
+Result set row: 29
+Result row: 
+Result set row: 30
+Result row: 
+Result set row: 31
+Result row: 
+Result set row: 32
+Result row: 
+Result set row: 33
+Result row: 
+Result set row: 34
+Result row: 
+Result set row: 35
+Result row: 
+Result set row: 36
+Result row: 
+Result set row: 37
+Result row: 
+Result set row: 38
+Result row: 
+Result set row: 39
+Result row: 
+Result set row: 40
+Result row: 
+Result set row: 41
+Result row: 
+Result set row: 42
+Result row: 
+Result set row: 43
+Result row: 
+Result set row: 44
+Result row: 
+Result set row: 45
+Result row: 
+Result set row: 46
+Result row: 
+Result set row: 47
+Result row: 
+Result set row: 48
+Result row: 
+Result set row: 49
+Result row: 
+Result set row: 50
+Result row: 
+Result set row: 51
+Result row: 
+Result set row: 52
+Result row: 
+Result set row: 53
+Result row: 
+Result set row: 54
+Result row: 
+Result set row: 55
+Result row: 
+Result set row: 56
+Result row: 
+Result set row: 57
+Result row: 
+Result set row: 58
+Result row: 
+Result set row: 59
+Result row: 
+Result set row: 60
+Result row: 
+Result set row: 61
+Result row: 
+Result set row: 62
+Result row: 
+Result set row: 63
+Result row: 
+Result set row: 64
+Result row: 
+Result set row: 65
+Result row: 
+Result set row: 66
+Result row: 
+Result set row: 67
+Result row: 
+Result set row: 68
+Result row: 
+Result set row: 69
+Result row: 
+Result set row: 70
+Result row: 
+Result set row: 71
+Result row: 
+Result set row: 72
+Result row: 
+Result set row: 73
+Result row: 
+Result set row: 74
+Result row: 
+Result set row: 75
+Result row: 
+Result set row: 76
+Result row: 
+Result set row: 77
+Result row: 
+Result set row: 78
+Result row: 
+Result set row: 79
+Result row: 
+Result set row: 80
+Result row: 
+Result set row: 81
+Result row: 
+Result set row: 82
+Result row: 
+Result set row: 83
+Result row: 
+Result set row: 84
+Result row: 
+Result set row: 85
+Result row: 
+Result set row: 86
+Result row: 
+Result set row: 87
+Result row: 
+Result set row: 88
+Result row: 
+Result set row: 89
+Result row: 
+Result set row: 90
+Result row: 
+Result set row: 91
+Result row: 
+Result set row: 92
+Result row: 
+Result set row: 93
+Result row: 
+Result set row: 94
+Result row: 
+Result set row: 95
+Result row: 
+Result set row: 96
+Result row: 
+Result set row: 97
+Result row: 
+Result set row: 98
+Result row: 
+Result set row: 99
+Result row: 
+Result set row: 100
+Result row: 
+Result set row: 101
+Result row: 
+Result set row: 102
+Result row: 
+Result set row: 103
+Result row: 
+Result set row: 104
+Result row: 
+Result set row: 105
+Result row: 
+Result set row: 106
+Result row: 
+Result set row: 107
+Result row: 
+Result set row: 108
+Result row: 
+Result set row: 109
+Result row: 
+Result set row: 110
+Result row: 
+Result set row: 111
+Result row: 
+Result set row: 112
+Result row: 
+Result set row: 113
+Result row: 
+Result set row: 114
+Result row: 
+Result set row: 115
+Result row: 
+Result set row: 116
+Result row: 
+Result set row: 117
+Result row: 
+Result set row: 118
+Result row: 
+Result set row: 119
+Result row: 
+Result set row: 120
+Result row: 
+Result set row: 121
+Result row: 
+Result set row: 122
+Result row: 
+Result set row: 123
+Result row: 
+Result set row: 124
+Result row: 
+Result set row: 125
+Result row: 
+Result set row: 126
+Result row: 
+Result set row: 127
+Result row: 
+Result set row: 128
+Result row: 
+Result set row: 129
+Result row: 
+Result set row: 130
+Result row: 
+Result set row: 131
+Result row: 
+Result set row: 132
+Result row: 
+Result set row: 133
+Result row: 
+Result set row: 134
+Result row: 
+Result set row: 135
+Result row: 
+Result set row: 136
+Result row: 
+Result set row: 137
+Result row: 
+Result set row: 138
+Result row: 
+Result set row: 139
+Result row: 
+Result set row: 140
+Result row: 
+Result set row: 141
+Result row: 
+Result set row: 142
+Result row: 
+Result set row: 143
+Result row: 
+Result set row: 144
+Result row: 
+Result set row: 145
+Result row: 
+Result set row: 146
+Result row: 
+Result set row: 147
+Result row: 
+Result set row: 148
+Result row: 
+Result set row: 149
+Result row: 
+Result set row: 150
+Result row: 
+Result set row: 151
+Result row: 
+Result set row: 152
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Written [[com.ebay.domain.item.Item@8cda4b, com.ebay.domain.item.Item@14f8ff4, com.ebay.domain.item.Item@741857, com.ebay.domain.item.Item@1ea15bc, com.ebay.domain.item.Item@138f7f5, com.ebay.domain.item.Item@11f08ea, com.ebay.domain.item.Item@825b06, com.ebay.domain.item.Item@25ee5b, com.ebay.domain.item.Item@43a0a5, com.ebay.domain.item.Item@1e7c650, com.ebay.domain.item.Item@18ccdf0, com.ebay.domain.item.Item@124661b, com.ebay.domain.item.Item@ab8382, com.ebay.domain.item.Item@46de9c, com.ebay.domain.item.Item@c11174, com.ebay.domain.item.Item@161128e, com.ebay.domain.item.Item@940ef, com.ebay.domain.item.Item@186121c, com.ebay.domain.item.Item@10eed0c, com.ebay.domain.item.Item@ecb379, com.ebay.domain.item.Item@1fae70d, com.ebay.domain.item.Item@1573087, com.ebay.domain.item.Item@1330759, com.ebay.domain.item.Item@12766b9, com.ebay.domain.item.Item@1c92969, com.ebay.domain.item.Item@1bdc1ed, com.ebay.domain.item.Item@106da95, com.ebay.domain.item.Item@f87b16, com.ebay.domain.item.Item@158f86a, com.ebay.domain.item.Item@1d2f3b, com.ebay.domain.item.Item@801f0, com.ebay.domain.item.Item@1b76d06, com.ebay.domain.item.Item@156b427, com.ebay.domain.item.Item@14da8a0, com.ebay.domain.item.Item@179a839, com.ebay.domain.item.Item@135095, com.ebay.domain.item.Item@fa3c9, com.ebay.domain.item.Item@c9ffed, com.ebay.domain.item.Item@1c13480, com.ebay.domain.item.Item@15dcbaf, com.ebay.domain.item.Item@e75504, com.ebay.domain.item.Item@17e7e2d, com.ebay.domain.item.Item@18dc240, com.ebay.domain.item.Item@1cc06e8, com.ebay.domain.item.Item@1d98d24, com.ebay.domain.item.Item@1c16284, com.ebay.domain.item.Item@12ae7c8, com.ebay.domain.item.Item@1d72e55, com.ebay.domain.item.Item@22d9a6, com.ebay.domain.item.Item@1ff539f, com.ebay.domain.item.Item@1cb1bef, com.ebay.domain.item.Item@196fb4b, com.ebay.domain.item.Item@14c1676, com.ebay.domain.item.Item@56d1f5, com.ebay.domain.item.Item@1f246ab, com.ebay.domain.item.Item@fd9d24, com.ebay.domain.item.Item@57ccf2, com.ebay.domain.item.Item@504d13, com.ebay.domain.item.Item@1f4353a, com.ebay.domain.item.Item@1d274dd, com.ebay.domain.item.Item@1f6645c, com.ebay.domain.item.Item@136ea90, com.ebay.domain.item.Item@61b355, com.ebay.domain.item.Item@44c2e2, com.ebay.domain.item.Item@569b29, com.ebay.domain.item.Item@1e4b362, com.ebay.domain.item.Item@1bd0085, com.ebay.domain.item.Item@16d2b03, com.ebay.domain.item.Item@2304f4, com.ebay.domain.item.Item@11a3980, com.ebay.domain.item.Item@b50624, com.ebay.domain.item.Item@a64bcd, com.ebay.domain.item.Item@1ba99b5, com.ebay.domain.item.Item@1c15cd0, com.ebay.domain.item.Item@1b463c4, com.ebay.domain.item.Item@209f2, com.ebay.domain.item.Item@1db0da5, com.ebay.domain.item.Item@5ce11a, com.ebay.domain.item.Item@1bea98a, com.ebay.domain.item.Item@6cc6cb, com.ebay.domain.item.Item@16f6efc, com.ebay.domain.item.Item@df81e6, com.ebay.domain.item.Item@1c953b3, com.ebay.domain.item.Item@961f1f, com.ebay.domain.item.Item@1d5690b, com.ebay.domain.item.Item@1e38faa, com.ebay.domain.item.Item@ecf762, com.ebay.domain.item.Item@16550bd, com.ebay.domain.item.Item@97c6c1, com.ebay.domain.item.Item@79e6c1, com.ebay.domain.item.Item@11ca3d1, com.ebay.domain.item.Item@1470681, com.ebay.domain.item.Item@1fbffce, com.ebay.domain.item.Item@1575d96, com.ebay.domain.item.Item@c1497e, com.ebay.domain.item.Item@1c01aaa, com.ebay.domain.item.Item@116befb, com.ebay.domain.item.Item@5489b7, com.ebay.domain.item.Item@1d6d59, com.ebay.domain.item.Item@1f5fe87, com.ebay.domain.item.Item@1198870, com.ebay.domain.item.Item@14ca3e4, com.ebay.domain.item.Item@9bded0, com.ebay.domain.item.Item@1414197, com.ebay.domain.item.Item@1395fb8, com.ebay.domain.item.Item@1bb6735, com.ebay.domain.item.Item@74dbed, com.ebay.domain.item.Item@12be7c, com.ebay.domain.item.Item@97ca36, com.ebay.domain.item.Item@15cb40c, com.ebay.domain.item.Item@1308294, com.ebay.domain.item.Item@1ccc742, com.ebay.domain.item.Item@12de6fc, com.ebay.domain.item.Item@97b126, com.ebay.domain.item.Item@ef56eb, com.ebay.domain.item.Item@1337245, com.ebay.domain.item.Item@93262b, com.ebay.domain.item.Item@aef125, com.ebay.domain.item.Item@159cc14, com.ebay.domain.item.Item@6565f4, com.ebay.domain.item.Item@1087660, com.ebay.domain.item.Item@939927, com.ebay.domain.item.Item@2bf9cb, com.ebay.domain.item.Item@11caba6, com.ebay.domain.item.Item@1493774, com.ebay.domain.item.Item@1d7a25b, com.ebay.domain.item.Item@1e4230e, com.ebay.domain.item.Item@b99208, com.ebay.domain.item.Item@1225c00, com.ebay.domain.item.Item@c6411a, com.ebay.domain.item.Item@1dc4bcd, com.ebay.domain.item.Item@1f4b500, com.ebay.domain.item.Item@972b98, com.ebay.domain.item.Item@af3ed3, com.ebay.domain.item.Item@145c55d, com.ebay.domain.item.Item@1a0689a, com.ebay.domain.item.Item@338a96, com.ebay.domain.item.Item@1cf8108, com.ebay.domain.item.Item@20458f, com.ebay.domain.item.Item@b6cf26, com.ebay.domain.item.Item@1d9e4e0, com.ebay.domain.item.Item@41646a, com.ebay.domain.item.Item@1279c84, com.ebay.domain.item.Item@194d1fe, com.ebay.domain.item.Item@16680a2, com.ebay.domain.item.Item@873882, com.ebay.domain.item.Item@18ee434, com.ebay.domain.item.Item@282c5d, com.ebay.domain.item.Item@178c41d, com.ebay.domain.item.Item@1938724, com.ebay.domain.item.Item@8d8ce4, com.ebay.domain.item.Item@11cfe41, com.ebay.domain.item.Item@78955e, com.ebay.domain.item.Item@9653b0, com.ebay.domain.item.Item@1508295, com.ebay.domain.item.Item@ad3b3d, com.ebay.domain.item.Item@10c5c9c, com.ebay.domain.item.Item@942c42, com.ebay.domain.item.Item@1e5ada9, com.ebay.domain.item.Item@1ec46b5, com.ebay.domain.item.Item@116422b, com.ebay.domain.item.Item@5242be, com.ebay.domain.item.Item@9beafc, com.ebay.domain.item.Item@608233, com.ebay.domain.item.Item@3f6fa, com.ebay.domain.item.Item@4bc43a, com.ebay.domain.item.Item@3ff361, com.ebay.domain.item.Item@8397ab, com.ebay.domain.item.Item@15a86e6, com.ebay.domain.item.Item@4e6bdc, com.ebay.domain.item.Item@8b6bf6, com.ebay.domain.item.Item@15d10e4, com.ebay.domain.item.Item@fffdf3, com.ebay.domain.item.Item@796b64, com.ebay.domain.item.Item@179a8d8, com.ebay.domain.item.Item@3c2297, com.ebay.domain.item.Item@311ae, com.ebay.domain.item.Item@17dece1, com.ebay.domain.item.Item@4ae0f6, com.ebay.domain.item.Item@1f7514c, com.ebay.domain.item.Item@1fa64f9, com.ebay.domain.item.Item@1fb2ae9, com.ebay.domain.item.Item@be5525, com.ebay.domain.item.Item@1c82e11, com.ebay.domain.item.Item@1486a49, com.ebay.domain.item.Item@13a0b63, com.ebay.domain.item.Item@1c1bb45, com.ebay.domain.item.Item@1edb2fd, com.ebay.domain.item.Item@8220d5, com.ebay.domain.item.Item@1398764, com.ebay.domain.item.Item@1e7b6dc, com.ebay.domain.item.Item@1965acf, com.ebay.domain.item.Item@23db35, com.ebay.domain.item.Item@cb338, com.ebay.domain.item.Item@1ca467c, com.ebay.domain.item.Item@d99488, com.ebay.domain.item.Item@a67455, com.ebay.domain.item.Item@1fb133, com.ebay.domain.item.Item@aac5cd, com.ebay.domain.item.Item@1a056b2, com.ebay.domain.item.Item@19c008d, com.ebay.domain.item.Item@e83e52, com.ebay.domain.item.Item@1539ac8, com.ebay.domain.item.Item@1d6e927, com.ebay.domain.item.Item@653def, com.ebay.domain.item.Item@c51c44, com.ebay.domain.item.Item@c2dab5, com.ebay.domain.item.Item@a4cb85, com.ebay.domain.item.Item@12dc59d, com.ebay.domain.item.Item@8e5cc, com.ebay.domain.item.Item@26b833, com.ebay.domain.item.Item@71c58, com.ebay.domain.item.Item@d60dd7, com.ebay.domain.item.Item@126a8f0, com.ebay.domain.item.Item@11d5e99, com.ebay.domain.item.Item@12d9fcb, com.ebay.domain.item.Item@55d035, com.ebay.domain.item.Item@1d88758, com.ebay.domain.item.Item@9dd6a4, com.ebay.domain.item.Item@76dfab, com.ebay.domain.item.Item@566433, com.ebay.domain.item.Item@1cc7fa1, com.ebay.domain.item.Item@cf397d, com.ebay.domain.item.Item@c77e95, com.ebay.domain.item.Item@14794b5, com.ebay.domain.item.Item@741995, com.ebay.domain.item.Item@3b8da3, com.ebay.domain.item.Item@1cfe425, com.ebay.domain.item.Item@18b7ab1, com.ebay.domain.item.Item@240fc6, com.ebay.domain.item.Item@1879249, com.ebay.domain.item.Item@1952591, com.ebay.domain.item.Item@d563d0, com.ebay.domain.item.Item@18c1104, com.ebay.domain.item.Item@b150ab, com.ebay.domain.item.Item@1270ae7, com.ebay.domain.item.Item@3d01d4, com.ebay.domain.item.Item@1433fe4, com.ebay.domain.item.Item@179368, com.ebay.domain.item.Item@1ceab8f, com.ebay.domain.item.Item@16176bc, com.ebay.domain.item.Item@1ba41c3, com.ebay.domain.item.Item@1336c25, com.ebay.domain.item.Item@100f4d4, com.ebay.domain.item.Item@1c9aba3, com.ebay.domain.item.Item@1236db6, com.ebay.domain.item.Item@f7f678, com.ebay.domain.item.Item@1567b3f, com.ebay.domain.item.Item@b5a148, com.ebay.domain.item.Item@6f7e55, com.ebay.domain.item.Item@1cf08ee, com.ebay.domain.item.Item@153539f]] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJacksonHttpMessageConverter@bb2118]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcher': assuming HandlerAdapter completed request handling
+Successfully completed request
+DispatcherServlet with name 'dispatcher' processing GET request for [/selectSingleSeller]
+Looking up handler method for path /selectSingleSeller
+Returning handler method [public com.ebay.domain.seller.SellerDto com.ebay.controller.CompetitorController.selectDtoSingleSeller(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+Returning cached instance of singleton bean 'competitorcontroller'
+Last-Modified value for [/selectSingleSeller] is: -1
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        to_days(max(Feed_Date))-to_days(min(Feed_Date)) as col_0_0_ 
+    from
+        FEEDBACK feedback0_ 
+    where
+        feedback0_.Seller=?
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+Result set row: 0
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        sum(feedback0_.PRICE) as col_0_0_ 
+    from
+        FEEDBACK feedback0_ 
+    where
+        feedback0_.Seller=? 
+    group by
+        feedback0_.Seller
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+Result set row: 0
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        count(*) as col_0_0_ 
+    from
+        FEEDBACK feedback0_ 
+    where
+        feedback0_.Seller=? 
+        and feedback0_.ATTITUDE=? 
+    group by
+        feedback0_.Seller
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+binding parameter [2] as [VARCHAR] - Positive feedback rating
+Result set row: 0
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        count(*) as col_0_0_ 
+    from
+        FEEDBACK feedback0_ 
+    where
+        feedback0_.Seller=? 
+        and feedback0_.ATTITUDE=? 
+    group by
+        feedback0_.Seller
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+binding parameter [2] as [VARCHAR] - Negative feedback rating
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Written [com.ebay.domain.seller.SellerDto@765f5e] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJacksonHttpMessageConverter@bb2118]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcher': assuming HandlerAdapter completed request handling
+Successfully completed request
+DispatcherServlet with name 'dispatcher' processing GET request for [/selectDayInfo]
+Looking up handler method for path /selectDayInfo
+Returning handler method [public java.util.List<com.ebay.domain.seller.DaySellDto> com.ebay.controller.CompetitorController.selectDayInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+Returning cached instance of singleton bean 'competitorcontroller'
+Last-Modified value for [/selectDayInfo] is: -1
+Resolving exception from handler [public java.util.List<com.ebay.domain.seller.DaySellDto> com.ebay.controller.CompetitorController.selectDayInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]: java.lang.NumberFormatException: For input string: ""
+Resolving exception from handler [public java.util.List<com.ebay.domain.seller.DaySellDto> com.ebay.controller.CompetitorController.selectDayInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]: java.lang.NumberFormatException: For input string: ""
+Resolving exception from handler [public java.util.List<com.ebay.domain.seller.DaySellDto> com.ebay.controller.CompetitorController.selectDayInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]: java.lang.NumberFormatException: For input string: ""
+Could not complete request
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:504)
+	at java.lang.Integer.parseInt(Integer.java:527)
+	at com.ebay.controller.CompetitorController.selectDayInfo(CompetitorController.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:219)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:745)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:686)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:936)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:827)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:734)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:847)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1336)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:744)
+DispatcherServlet with name 'dispatcher' processing GET request for [/selectDayInfo]
+Looking up handler method for path /selectDayInfo
+Returning handler method [public java.util.List<com.ebay.domain.seller.DaySellDto> com.ebay.controller.CompetitorController.selectDayInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+Returning cached instance of singleton bean 'competitorcontroller'
+Last-Modified value for [/selectDayInfo] is: -1
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        feedback0_.Seller as col_0_0_,
+        dayofmonth(feedback0_.Feed_Date) as col_1_0_,
+        sum(feedback0_.PRICE) as col_2_0_ 
+    from
+        FEEDBACK feedback0_ 
+    where
+        feedback0_.Seller=? 
+        and month(feedback0_.Feed_Date)=? 
+    group by
+        dayofmonth(feedback0_.Feed_Date)
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+binding parameter [2] as [INTEGER] - 10
+Result set row: 0
+Result row: 
+Result set row: 1
+Result row: 
+Result set row: 2
+Result row: 
+Result set row: 3
+Result row: 
+Result set row: 4
+Result row: 
+Result set row: 5
+Result row: 
+Result set row: 6
+Result row: 
+Result set row: 7
+Result row: 
+Result set row: 8
+Result row: 
+Result set row: 9
+Result row: 
+Result set row: 10
+Result row: 
+Result set row: 11
+Result row: 
+Result set row: 12
+Result row: 
+Result set row: 13
+Result row: 
+Result set row: 14
+Result row: 
+Result set row: 15
+Result row: 
+Result set row: 16
+Result row: 
+Result set row: 17
+Result row: 
+Result set row: 18
+Result row: 
+Result set row: 19
+Result row: 
+Result set row: 20
+Result row: 
+Result set row: 21
+Result row: 
+Result set row: 22
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Written [[com.ebay.domain.seller.DaySellDto@1e5a22, com.ebay.domain.seller.DaySellDto@af7a8c, com.ebay.domain.seller.DaySellDto@96b720, com.ebay.domain.seller.DaySellDto@d09e62, com.ebay.domain.seller.DaySellDto@4e3fa1, com.ebay.domain.seller.DaySellDto@1339158, com.ebay.domain.seller.DaySellDto@8b4ced, com.ebay.domain.seller.DaySellDto@1676103, com.ebay.domain.seller.DaySellDto@122c7a, com.ebay.domain.seller.DaySellDto@1260bfb, com.ebay.domain.seller.DaySellDto@dcc3b8, com.ebay.domain.seller.DaySellDto@1b594a9, com.ebay.domain.seller.DaySellDto@32f489, com.ebay.domain.seller.DaySellDto@1545ac8, com.ebay.domain.seller.DaySellDto@1141ddf, com.ebay.domain.seller.DaySellDto@1b5450e, com.ebay.domain.seller.DaySellDto@1c8dba2, com.ebay.domain.seller.DaySellDto@1cb94ad, com.ebay.domain.seller.DaySellDto@8e2646, com.ebay.domain.seller.DaySellDto@72c20d, com.ebay.domain.seller.DaySellDto@21fa47, com.ebay.domain.seller.DaySellDto@b65cd2, com.ebay.domain.seller.DaySellDto@8812a6, com.ebay.domain.seller.DaySellDto@180508f, com.ebay.domain.seller.DaySellDto@1291058, com.ebay.domain.seller.DaySellDto@f027f4, com.ebay.domain.seller.DaySellDto@cf4026, com.ebay.domain.seller.DaySellDto@7ca10e, com.ebay.domain.seller.DaySellDto@31b90d, com.ebay.domain.seller.DaySellDto@6c36d8, com.ebay.domain.seller.DaySellDto@84b6b7]] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJacksonHttpMessageConverter@bb2118]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcher': assuming HandlerAdapter completed request handling
+Successfully completed request
+DispatcherServlet with name 'dispatcher' processing GET request for [/selectMonthInfo]
+Looking up handler method for path /selectMonthInfo
+Returning handler method [public java.util.List<com.ebay.domain.seller.SellerInfoDto> com.ebay.controller.CompetitorController.selectMonthInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+Returning cached instance of singleton bean 'competitorcontroller'
+Last-Modified value for [/selectMonthInfo] is: -1
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        feedback0_.Seller as col_0_0_,
+        month(feedback0_.Feed_Date) as col_1_0_,
+        sum(feedback0_.PRICE) as col_2_0_ 
+    from
+        FEEDBACK feedback0_ 
+    where
+        feedback0_.Seller=? 
+    group by
+        month(feedback0_.Feed_Date)
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+Result set row: 0
+Result row: 
+Result set row: 1
+Result row: 
+Result set row: 2
+Result row: 
+Result set row: 3
+Result row: 
+Result set row: 4
+Result row: 
+Result set row: 5
+Result row: 
+Result set row: 6
+Result row: 
+Result set row: 7
+Result row: 
+Result set row: 8
+Result row: 
+Result set row: 9
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Written [[com.ebay.domain.seller.SellerInfoDto@212cda, com.ebay.domain.seller.SellerInfoDto@7c863, com.ebay.domain.seller.SellerInfoDto@f4e9f5, com.ebay.domain.seller.SellerInfoDto@12bf62a, com.ebay.domain.seller.SellerInfoDto@12e6f2f, com.ebay.domain.seller.SellerInfoDto@185b0b6, com.ebay.domain.seller.SellerInfoDto@148ce5, com.ebay.domain.seller.SellerInfoDto@12e0f74, com.ebay.domain.seller.SellerInfoDto@f89282, com.ebay.domain.seller.SellerInfoDto@15aaff9, com.ebay.domain.seller.SellerInfoDto@d71aab, com.ebay.domain.seller.SellerInfoDto@17f8fd]] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJacksonHttpMessageConverter@bb2118]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcher': assuming HandlerAdapter completed request handling
+Successfully completed request
+DispatcherServlet with name 'dispatcher' processing GET request for [/selectWeekInfo]
+Looking up handler method for path /selectWeekInfo
+Returning handler method [public java.util.List<com.ebay.domain.seller.WeekSellInfo> com.ebay.controller.CompetitorController.selectWeekInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+Returning cached instance of singleton bean 'competitorcontroller'
+Last-Modified value for [/selectWeekInfo] is: -1
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        feedback0_.Seller as col_0_0_,
+        weekday(feedback0_.Feed_Date) as col_1_0_,
+        sum(feedback0_.PRICE) as col_2_0_ 
+    from
+        FEEDBACK feedback0_ 
+    where
+        feedback0_.Seller=? 
+        and month(feedback0_.Feed_Date)=? 
+    group by
+        weekday(feedback0_.Feed_Date)
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+binding parameter [2] as [INTEGER] - 10
+Result set row: 0
+Result row: 
+Result set row: 1
+Result row: 
+Result set row: 2
+Result row: 
+Result set row: 3
+Result row: 
+Result set row: 4
+Result row: 
+Result set row: 5
+Result row: 
+Result set row: 6
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Written [[com.ebay.domain.seller.WeekSellInfo@10af25, com.ebay.domain.seller.WeekSellInfo@15ab27a, com.ebay.domain.seller.WeekSellInfo@17ba0b3, com.ebay.domain.seller.WeekSellInfo@1735e12, com.ebay.domain.seller.WeekSellInfo@125114f, com.ebay.domain.seller.WeekSellInfo@9399b9, com.ebay.domain.seller.WeekSellInfo@514722]] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJacksonHttpMessageConverter@bb2118]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcher': assuming HandlerAdapter completed request handling
+Successfully completed request
+DispatcherServlet with name 'dispatcher' processing GET request for [/selectWeekInfo]
+Looking up handler method for path /selectWeekInfo
+Returning handler method [public java.util.List<com.ebay.domain.seller.WeekSellInfo> com.ebay.controller.CompetitorController.selectWeekInfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model)]
+Returning cached instance of singleton bean 'competitorcontroller'
+Last-Modified value for [/selectWeekInfo] is: -1
+Creating new EntityManager for shared EntityManager invocation
+
+    select
+        feedback0_.Seller as col_0_0_,
+        weekday(feedback0_.Feed_Date) as col_1_0_,
+        sum(feedback0_.PRICE) as col_2_0_ 
+    from
+        FEEDBACK feedback0_ 
+    where
+        feedback0_.Seller=? 
+        and month(feedback0_.Feed_Date)=? 
+    group by
+        weekday(feedback0_.Feed_Date)
+Obtaining JDBC connection
+Obtained JDBC connection
+binding parameter [1] as [VARCHAR] - huyhoang1008
+binding parameter [2] as [INTEGER] - 10
+Result set row: 0
+Result row: 
+Result set row: 1
+Result row: 
+Result set row: 2
+Result row: 
+Result set row: 3
+Result row: 
+Result set row: 4
+Result row: 
+Result set row: 5
+Result row: 
+Result set row: 6
+Result row: 
+Closing JPA EntityManager
+Releasing JDBC connection
+Released JDBC connection
+Written [[com.ebay.domain.seller.WeekSellInfo@1e0b2e2, com.ebay.domain.seller.WeekSellInfo@100428d, com.ebay.domain.seller.WeekSellInfo@117718, com.ebay.domain.seller.WeekSellInfo@a1d70d, com.ebay.domain.seller.WeekSellInfo@12db69a, com.ebay.domain.seller.WeekSellInfo@2f7389, com.ebay.domain.seller.WeekSellInfo@14a4744]] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJacksonHttpMessageConverter@bb2118]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcher': assuming HandlerAdapter completed request handling
+Successfully completed request

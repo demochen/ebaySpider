@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Terapeak Product Search</title>
+<link rel="stylesheet" type="text/css" media="all"  th:href="@{/css/home.css}" />
+<link rel="stylesheet" type="text/css" media="all"  th:href="@{/css/jqx.base.css}" />
+<link rel="stylesheet" type="text/css" media="all"  th:href="@{/css/competitor.css}" />
+<script type="text/javascript"  th:src="@{/js/jquery-1.10.2.min.js}"></script>
+<script type="text/javascript"  th:src="@{/js/jqxcore.js}"></script>
+<script type="text/javascript"  th:src="@{/js/jqxbuttons.js}"></script>
+<script type="text/javascript"  th:src="@{/js/jqxscrollbar.js}"></script>
+<script type="text/javascript"  th:src="@{/js/jqxlistbox.js}"></script>
+<script type="text/javascript"  th:src="@{/js/jqxcombobox.js}"></script>
+<script type="text/javascript"  th:src="@{/js/ProgressBar.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.jqplot.min.js}"></script>
+<script type="text/javascript" th:src="@{/plugins/jqplot.pieRenderer.min.js}"></script>
+<script type="text/javascript" th:src="@{/plugins/jqplot.donutRenderer.min.js}"></script>
+<script type="text/javascript" th:src="@{/plugins/jqplot.dateAxisRenderer.min.js}"></script>
+<script type="text/javascript" th:src="@{/plugins/jqplot.canvasTextRenderer.min.js}"></script>
+<script type="text/javascript" th:src="@{/plugins/jqplot.canvasAxisTickRenderer.min.js}"></script>
+<script type="text/javascript" th:src="@{/plugins/jqplot.categoryAxisRenderer.min.js}"></script>
+<script type="text/javascript" th:src="@{/plugins/jqplot.barRenderer.min.js}"></script>
+<script type="text/javascript" th:src="@{/plugins/jqplot.categoryAxisRenderer.min.js}"></script>
+</head>
+<body>
+ <div id="switch-app">  
+      <div id="link-wrapper">
+         <div id="mf0" class="app-link">
+             <img id="mf1" src="../img/tp_ebay_transparent.png"/>
+             <img id="mf1" src="../img/tp_amazon_transparent.png"/>
+         </div>
+      </div>
+   </div>
+        <div id="research_container">
+            <div id="non_header">
+                 <header th:substituteby="/layout/head" ></header>
+                 <div class="pageBackground" style="padding-bottom: 10px;"> 
+                        <div id="searchBar">
+                          <span class="searchBarContainer dropkick-container">
+                               <span class="inputContainer">
+                                  <div class="searchBarLeft icon-search-competitor"></div>
+                                  <input type="text" placeholder="Search for a competitor" id="searchBarMainInput" class="text" name="sellerName"/>
+                                  <div id="mf53" class="clearSearchForm">
+                                        <a id="mfa16" class="icon-search-clear" > </a>
+                                  </div>
+                                 </span>
+                                <div class="date-dropdown-container" style="margin-bottom: 5px;padding-left:10px;padding-right: 20px;">
+                                  <div id="days"></div>
+                                </div> 
+                               <input type="submit" value="Go" class="submit btn btn-success" id="mfi2"/>
+                        </span>
+                        </div>
+                   
+                 </div>
+                 <div style="margin-top:10px" class="pageBackground">
+	               <div class="breadcrumb"> 
+	                  <div class="category-entry-container">
+		                 <form onsubmit="submitCategoryEntry(jQuery('#category-entry').val(), true); return false;">
+			                Enter Category ID: <input type="text" name="id" id="category-entry" maxlength="15" class="category-entry" value="6028"/>
+			                <input type="submit" class="btn btn-info" value="Go"/>
+			             </form>
+		               </div>
+	                  <div class="crumb crumb_0 ">
+								<a href="" onclick="javascript:navigateBreadcrumb(6000, jQuery(this).html());return false;" class="bg-gradient-i crumb_heading crumb_ancestor" id="children_6000">eBay Motors</a>
+									<div class="breadcrumb-divider-wide"></div>
+			          </div>
+	                  <div class="crumb crumb_1 ">
+								<a href="" onclick="javascript:return false;" class="crumb_heading bg-gradient-i" id="children_6028">Parts &amp; Accessories</a>
+												<div class="breadcrumb-divider-wide"></div>
+			          </div>
+	                  <div class="breadcrumb-section bg-gradient-i">
+					  <div class="crumb crumb_last">
+							<div class="dropkick-container">
+								<div class="ui-dropdown-container ui-dropdown-theme-cat-breadcrumb" id="dropdown_container_category_select_6028" tabindex="1" onselectstart="return false;" ondragstart="return false;">
+								                                    <a class="ui-dropdown-toggle btn">
+								                                    <span>All Categories</span>
+								                                   <p class="ui-dropdown-arrow"></p></a>
+								  </div>
+			                     
+							</div>
+						</div>
+					</div>
+	                  <div class="clear"></div>
+	             </div>
+         </div>
+                 <div id="mainContent">
+                    <div class="noResultsBox" style="display:none">
+                        <div style="color: #0030a1; font-size: 14px; margin-left: 10px;" >
+							<br/>
+							<b>No Results Found</b><br/>
+							<br/>
+							Did you mean to search <a href="">without a category filter</a>?<br/>
+							<br/>
+							You are searching for a seller. No Recodr Find in Local .Do you want to catch From Online ?<input type="button" value="Catch" class="submit btn btn-success" id="catch"/>
+							<br/>
+							<br/>
+							Please redefine your search and try again.<br/>
+							<br/>
+					   </div>
+                    </div>
+                    <div id="filterContainer">
+             <div class="bg-gradient-e" id="filterBar">
+               <div id="mf290" class="label">
+			           <a id="show-hide" href="javascript:void(0)" onclick="filterManager.toggleFilterView()">
+			           <div id="mf291" class="icon-filter-bar-show"></div>
+			           <span style="width: 150px;" id="show-hide-text">Show Product Filters</span>
+			           </a>
+		       </div>
+               <div style="opacity: 1;" id="apply-filters" class="filter-button bg-gradient-b">
+                    <a id="mfa111" href="javascript:void(0)" class="title-tooltip" onclick="jQuery('#searchBarForm').submit()">
+                    <i id="mf292" class="icon-ok"></i>Apply Filters</a>
+		       </div> 
+               <div id="mf293" class="filter-button bg-gradient-k">
+		        	<a href="javascript:void(0)" class="title-tooltip" onclick="filterManager.togglePin()" id="pin-filters">
+		        	<i id="mf294" class="icon-pushpin"></i>Pin Panel</a>
+		      </div>
+               <div id="mf295" class="filter-button bg-gradient-k">
+		       	<a href="javascript:void(0)" class="title-tooltip" id="clear-link" onclick="filterManager.removeAll()">
+		       	<i id="mf296" class="icon-ban-circle"></i>Clear Filters</a>
+		      </div>
+               <span id="filter-list"></span>
+               <div style="clear: both;"></div>
+             </div>
+             <div style="display: block;" id="filterDetail">
+                    <div style="position: relative; height: 170px;" class="masonryContainer masonry">
+                       <div style="position: absolute; top: 5px; left: 5px;" class="filtersMenuItemContainer filtersMenuItemSingleWidth filtersMenuItemDoubleHeight masonry-brick">  
+                           <div class="filtersMenuItemHeader">
+                              <div class="filtersMenuItemHeaderIcon icon-filter-listing-type"></div> 
+                              <div class="filtersMenuItemTitle">Listing Type</div>
+                              <div class="filtersMenuItemClear"><a href="javascript:void(0)" onclick="filterManager.remove(FilterManager.LISTING_TYPE)"><i class="icon-ban-circle"></i></a></div>
+                           </div>
+                           <div class="filtersMenuItemContent">
+                            <table>
+                                  <tbody>
+                                     <tr><td>
+                                       <input type="checkbox" id="type_bid" name="type[bid]" value="1"/>Bid Auctions
+								    </td></tr>
+								      <tr><td>
+								      <input type="checkbox" id="type_dutch" name="type[dutch]" value="1"/>Multiple Item
+								    </td></tr>
+								      <tr><td>
+								      <input type="checkbox" id="type_fixed" name="type[fixed]" value="1"/>Fixed Price
+								    </td></tr>
+								      <tr><td>
+								      <input type="checkbox" id="type_store" name="type[store]" value="1"/>Store
+								    </td></tr>
+								      <tr><td>
+								      <input type="checkbox" id="type_second" name="type[second]" value="1"/>Second Chance
+								    </td></tr>
+								      <tr><td>
+								      <input type="checkbox" id="type_live" name="type[live]" value="1"/>Live Auction
+								    </td></tr>
+								   </tbody>
+							</table>
+                           </div>
+					   </div>
+					   <div style="position: absolute; top: 5px; left: 195px;" class="filtersMenuItemContainer filtersMenuItemSingleWidth filtersMenuItemSingleHeight masonry-brick">
+					      <div class="filtersMenuItemHeader">
+					         <div class="filtersMenuItemHeaderIcon icon-filter-price-range"></div>
+                             <div class="filtersMenuItemTitle">Start Price</div>
+                             <div class="filtersMenuItemClear"><a href="javascript:void(0)" onclick="filterManager.remove(FilterManager.LISTING_TYPE)"><i class="icon-ban-circle"></i></a></div>
+					      </div>
+					      <div class="filtersMenuItemContent">
+					           <div style="margin-bottom: 5px">
+					             <input type="text" id="filter_from_start_price" name="from_start_price" onkeyup="priceValidation(this)" size="5" maxlength="12" class="component-base "/>
+                                 to
+                                 <input type="text" id="filter_to_start_price" name="to_start_price" onkeyup="priceValidation(this)" size="5" maxlength="12" class="component-base "/>
+                              </div>
+					      </div>
+					   </div>
+					   <div style="position: absolute; top: 5px; left: 385px;" class="filtersMenuItemContainer filtersMenuItemSingleWidth filtersMenuItemSingleHeight masonry-brick">  
+                           <div class="filtersMenuItemHeader">
+                              <div class="filtersMenuItemHeaderIcon icon-filter-price-range"></div>
+                              <div class="filtersMenuItemTitle">End Price</div>
+                              <div class="filtersMenuItemClear"><a href="javascript:void(0)" onclick="filterManager.remove(FilterManager.END_PRICE)"><i class="icon-ban-circle"></i></a></div>
+                           </div>
+                           <div class="filtersMenuItemContent">
+                              <div style="margin-bottom: 5px">
+                                <input type="text" id="filter_from_end_price" name="from_end_price" onkeyup="priceValidation(this)" size="5" maxlength="12" class="component-base "/>
+                                 to 
+                                <input type="text" id="filter_from_to_end_price" name="to_end_price" onkeyup="priceValidation(this)" size="5" maxlength="12" class="component-base "/>
+                              </div>
+                           </div>
+					   </div>
+					   <div style="position: absolute; top: 5px; left: 575px;" class="filtersMenuItemContainer filtersMenuItemSingleWidth filtersMenuItemSingleHeight masonry-brick">  
+                            <div class="filtersMenuItemHeader">
+                              <div class="filtersMenuItemHeaderIcon icon-filter-item-condition"></div>
+                              <div class="filtersMenuItemTitle">Item Condition</div>
+                              <div class="filtersMenuItemClear"> <a href="javascript:void(0)" onclick="filterManager.remove(FilterManager.ITEM_CONDITION)"><i class="icon-ban-circle"></i></a></div>	
+                            </div>
+                            <div class="filtersMenuItemContent">
+                              <div style="margin-bottom: 5px;padding-left: 15px">
+                              <div id="jqxcombobox"></div>
+                              </div>
+                           </div>
+					   </div>
+					   <div style="position: absolute; top: 85px; left: 195px;" class="filtersMenuItemContainer filtersMenuItemSingleWidth filtersMenuItemSingleHeight masonry-brick">  
+                           <div class="filtersMenuItemHeader">
+                             <div class="filtersMenuItemHeaderIcon icon-filter-seller-country"></div>
+                             <div class="filtersMenuItemTitle">Seller Country</div>
+                             <div class="filtersMenuItemClear"><a href="javascript:void(0)" onclick="filterManager.remove(FilterManager.SELLER_COUNTRY)"><i class="icon-ban-circle"></i></a> </div>
+                           </div>
+                           <div class="filtersMenuItemContent">
+                            <div style="margin-bottom: 5px;padding-left: 15px">
+                              <div id="sellercountry"></div>
+                              </div>
+                           </div>
+					   </div>
+					   <div style="position: absolute; top: 85px; left: 385px;" class="filtersMenuItemContainer filtersMenuItemSingleWidth filtersMenuItemSingleHeight masonry-brick">  
+                           <div class="filtersMenuItemHeader">
+                              <div class="filtersMenuItemHeaderIcon icon-filter-seller-id"></div>
+                              <div class="filtersMenuItemTitle">Seller ID</div>
+                              <div class="filtersMenuItemClear"><a href="javascript:void(0)" onclick="filterManager.remove(FilterManager.SELLER_ID)"><i class="icon-ban-circle"></i></a></div>
+                           </div>
+                           <div class="filtersMenuItemContent">
+                             <input type="text" id="seller_id_filter" name="sellers" class="text"/>
+                           </div>
+					   </div>
+					   <div style="position: absolute; top: 85px; left: 575px;" class="filtersMenuItemContainer filtersMenuItemSingleWidth filtersMenuItemSingleHeight masonry-brick">  
+                           <div class="filtersMenuItemHeader">
+                            <div class="filtersMenuItemHeaderIcon icon-filter-listing-duration"></div>
+                            <div class="filtersMenuItemTitle">Listing Duration</div>
+                            <div class="filtersMenuItemClear"><a href="javascript:void(0)" onclick="filterManager.remove(FilterManager.LISTING_DURATION)"><i class="icon-ban-circle"></i></a></div>
+                           </div>
+                           <div class="filtersMenuItemContent">
+                             <div style="margin-bottom: 5px;padding-left: 15px">
+                                 <div id="duations"></div>
+                              </div>
+                           </div>
+					   </div>
+					</div>
+              </div>
+            </div>
+                    <div class="view-bar-container" id="viewabr" style="display:none">
+                         <div class="view-bar alert alert-info">
+                            <div class="bg-gradient-g view-bar-section">
+                                <div name="" class="component-base component-text" id="mf5309">Views</div>
+                                <div class="component-icon component-base icon-view-overview" id="mf5310"></div>
+                                <div class="component-icon component-base icon-view-list" id="mf5311"></div>
+                                <div class="component-icon component-base  icon-view-trend" id="mf5311"></div>
+                                <div class="component-icon component-base icon-view-top-titles" id="mf5311"></div>
+                            </div>
+                            <div class="bg-gradient-g view-bar-section">
+                                <div name="" class="component-base component-text" id="mf5315">Key Stats</div>
+                                <div class="component-icon component-base icon-metric-table" id="mf5316"></div>
+                                <div class="component-icon component-base icon-metric-total-listings" id="mf5317"></div>
+                                <div class="component-icon component-base icon-metric-average-price" id="mf5318"></div>
+                                <div class="component-icon component-base icon-metric-sell-through" id="mf5319"></div>
+                            </div>
+                            <div class="bg-gradient-g view-bar-section">
+                             <div name="" class="component-base component-text" id="mf5315">Action</div>
+                               <div class="component-icon component-base icon-action-save" id="mf5322"></div>	
+                               <div class="component-icon component-base icon-action-excel" id="mf5323"></div>
+                               <div class="component-icon component-base icon-action-pdf" id="mf5324"></div>
+                               <div class="component-icon component-base icon-action-pin-vt" id="mf5325"></div>
+                            </div>	
+                            <div class="bg-gradient-g view-bar-section"></div>
+                            <div class="view-bar-title" id="mf5326">Competitor Overview</div>
+                         </div>                 
+                    </div>
+                    <div class="search_report_content" style="display:none;width:100%;overflow:hidden;">
+                       <div id="page">
+                       <div id="widget_col_0" style="height:1086px;">
+                           <div id="widget_0" class="widget" style="position:relative">
+                              <div class="widget_nw">
+                                  <div id="header_widget_3" class="widget_title widget_draggable" style="background-color: rgb(0, 160, 215);">CommenInfo</div>
+                              </div>
+                              <div class="widget_w">
+                                  <div class="widget_content"  >
+                                   <div class="rsc_main">
+                                      <div class="fusion_table_div">
+                                         <table class="sub_content" style="border:1px solid black;">
+                                           <thead>
+                                            <tr> 
+                                              <th>SellerName</th>
+                                              <th>Country</th>
+                                              <th>StoreCreatedDate</th>
+                                              <th>Star	</th>
+                                            </tr>
+                                           </thead>
+                                           <tbody>
+                                              <tr>
+                                                  <td id="sellername"></td>
+                                                  <td id="country"></td>
+                                                  <td id="createdate"></td>
+                                                  <td id="star"></td>
+                                              </tr>
+                                           </tbody>
+                                         </table>
+                                      </div>
+                                   </div>
+                                </div>
+                              </div>
+                              <div class="widget_sw">
+                                  <div id="footer_widget_3" class="widget_statusbar"></div>                             
+                              </div>
+                           </div>
+                           <div id="widget_1" class="widget" style="position:relative">
+                                <div class="widget_nw">
+                                  <div id="header_widget_3" class="widget_title widget_draggable" style="background-color: rgb(0, 160, 215);">One Month Rate</div>
+                                </div>
+                                <div class="widget_w">
+                                   <div class="widget_content"  >
+                                     <div class="rsc_main">
+                                       <input type="button" id="testploat" class="submit btn btn-success" value="One Month Rates"/>
+                                      <div id="chart1" ></div>
+                                      </div>
+                                 </div>
+                                </div>
+                                 <div class="widget_sw">
+                                  <div id="footer_widget_3" class="widget_statusbar"></div>                             
+                              </div>
+                            </div>
+                           <div id="widget_2" class="widget" style="position:relative">
+                                <div class="widget_nw">
+                                  <div id="header_widget_3" class="widget_title widget_draggable" style="background-color: rgb(0, 160, 215);">Six Month Rate</div>
+                                </div>
+                                <div class="widget_w">
+                                  <div class="widget_content"  >
+                                   <div class="rsc_main" style="height:300px">
+                                     <input type="button" id="testploat1" class="submit btn btn-success" value="Six Month Rates"/>
+                                    <div id="chart2" ></div>
+                                  </div>
+                                  </div>
+                                </div>
+                                 <div class="widget_sw">
+                                  <div id="footer_widget_3" class="widget_statusbar"></div>                             
+                              </div>
+                           </div>                   
+                       </div>
+
+                      
+                      <div id="widget_col_1" style="height:1086px;"> 
+                           <div id="widget_3" class="widget" style="position:relative">
+                               <div class="widget_nw">
+                                 <div id="header_widget_3" class="widget_title widget_draggable" style="background-color: rgb(0, 160, 215);">Pricing</div>
+                               </div>
+                               <div class="widget_w">
+                                   <div class="widget_content">
+                                       <div class="rsc_main">
+                                         <input type="button" id="price" class="submit btn btn-success" value="price"/>
+                                           <div class="fusion_table_div">
+                                              <table id ="pringitems" class="sub_content" style="border:1px solid black;">
+                                                 <thead>
+                                                    <tr>
+                                                      <th ><Strong>Pricing</Strong></th>
+                                                      <th ><Strong>ItemSold</Strong></th>
+                                                    </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                 </tbody>
+                                              </table>
+                                           </div>
+                                       </div> 
+                                   </div>
+                               </div>
+                               <div class="widget_sw">
+                                    <div id="footer_widget_3" class="widget_statusbar"></div>                             
+                               </div>
+                           </div>
+                           <div id="widget_4" class="widget" style="position:relative">
+                               <div class="widget_nw">
+                                 <div id="header_widget_3" class="widget_title widget_draggable" style="background-color: rgb(0, 160, 215);">SpecialItems</div>
+                               </div>
+                               <div class="widget_w">
+                                 <div class="widget_content" >
+                                      <div class="rsc_main">
+                                       <input type="button" id="specialbt" class="submit btn btn-success" value="SpecialItems"/>
+                                         <div class="fusion_table_div">
+                                          <table class="sub_content" id="specialItems"  style="border:1px solid black;width:300px">
+                                           <thead>
+                                             <tr>
+                                              <th><strong>ItemId</strong></th>
+                                              <th><strong>ItemName</strong></th>
+                                              <th><strong>Price</strong></th>
+                                             </tr>
+                                           </thead>
+                                           <tbody>
+                                           </tbody>
+                                          </table>
+                                         </div>
+                                      </div>
+                                 </div>
+                               </div>
+                               <div class="widget_sw">
+                                   <div id="footer_widget_3" class="widget_statusbar"></div>                             
+                               </div>
+                           </div>
+                           <div id="widget_5" class="widget" style="position:relative">
+                               <div class="widget_nw">
+                                 <div id="header_widget_3" class="widget_title widget_draggable" style="background-color: rgb(0, 160, 215);">Seller SellInfo</div>
+                               </div>
+                               <div class="widget_w">
+                                     <div class="widget_content" >
+                                        <input type="button" id="sellerdto" class="submit btn btn-success" value="Seller SellInfo"/>
+                                        <table class="stats">
+                                          <tr class="odd">
+                                             <th>All days</th>
+                                             <td id="alldays"></td>
+                                          </tr>
+                                          <tr >
+                                             <th>Total Sales</th>
+                                             <td id="totalsales"></td>
+                                          </tr>
+                                          <tr class="odd">
+                                             <th>Total Account</th>
+                                             <td id="totalcount"></td>
+                                          </tr>
+                                          <tr >
+                                             <th>Success Account</th>
+                                             <td id="successcount"></td>
+                                          </tr>
+                                           <tr class="odd">
+                                             <th>  Failed Account</th>
+                                             <td id="failedcount"></td>
+                                          </tr>
+                                           <tr >
+                                             <th>Sell Per Day</th>
+                                             <td id="sellPerday"></td>
+                                          </tr>
+                                        </table>
+                                     </div>
+                               
+                               </div>
+                                <div class="widget_sw">
+                                  <div id="footer_widget_3" class="widget_statusbar"></div>
+                               </div>
+                           </div>
+                      </div>
+                      <div id="widget_col_2" style="height:1086px;">
+                            <div id="widget_6" class="widget" style="position:relative">
+                               <div class="widget_nw">
+                                 <div id="header_widget_3" class="widget_title widget_draggable" style="background-color: rgb(0, 160, 215);">Year SellInfo</div>
+                               </div>
+                               <div class="widget_w" style="height:265px">
+                                  <div class="widget_content"  >
+                                        <div class="rsc_main" >
+                                          <input type="button" id="monthsell" class="submit btn btn-success" value="Year Sell"/>
+                                           <div id="chart3" ></div>
+                                        </div>
+                                     </div>
+                               </div>
+                               <div class="widget_sw">
+                                <div id="footer_widget_3" class="widget_statusbar"></div>
+                               </div>
+                            </div>
+                            <div id="widget_7" class="widget" style="position:relative">
+                               <div class="widget_nw">
+                                   <div id="header_widget_3" class="widget_title widget_draggable" style="background-color: rgb(0, 160, 215);">Day SellInfo</div>                            
+                               </div>
+                               <div class="widget_w">
+                                   <div class="widget_content" style="height:265px">
+                                        <div class="rsc_main">
+                                        <input type="text" id="chosemonth" placeholder="Month" name="from_start_price" onkeyup="priceValidation(this)" size="5" maxlength="12" class="component-base "/>
+                                        <input type="button" id="daysell" class="submit btn btn-success" value="day Sell"/>
+                                          <div id="chart4" ></div>
+                                        </div>
+                                     </div>
+                               </div>
+                               <div class="widget_sw">
+                                 <div id="footer_widget_3" class="widget_statusbar"></div>
+                               </div>
+                            </div>
+                            <div id="widget_8" class="widget" style="position:relative">
+                               <div class="widget_nw">
+                                   <div id="header_widget_3" class="widget_title widget_draggable" style="background-color: rgb(0, 160, 215);">Week SellInfo</div>
+                               </div>
+                               <div class="widget_w">
+                                 <div class="widget_content" style="height:330px">
+                                        <div class="rsc_main">
+                                           <input type="text" id="chosemonth" placeholder="Month" name="from_start_price" onkeyup="priceValidation(this)" size="5" maxlength="12" class="component-base "/>
+                                        <input type="button" id="weeksell" class="submit btn btn-success" value="week Sell"/>
+                                         <div id="chart5" ></div>
+                                        </div>
+                                     </div>
+                               </div>
+                               <div class="widget_sw">
+                                <div id="footer_widget_3" class="widget_statusbar"></div>
+                               </div>
+                            </div>
+                      </div>
+                      </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+</body>
+<script >
+/*<![CDATA[*/
+     $("#mfa16").click(function (){
+	 $("#searchBarMainInput").val("");
+	 $("#searchBarMainInput").blur(); 
+  }); 
+     $(document).ready(function () {
+       var days=[
+                     "1 day",
+                     "3 days",
+                     "5 days", 
+                     "7 days", 
+                     "10 days",
+                     "30 days"
+                  ];
+   
+       var duations=[
+                 "1 day",
+                 "3 days",
+                 "5 days", 
+                 "7 days", 
+                 "10 days",
+                 "30 days"
+              ];
+       var source = [
+                     "New",
+                     "Refurbished",
+                     "Used",
+                     "Not Specified"
+                 ];
+                 var country=[
+                              "APO/FPO",
+                              "Afghanistan",
+                              "American", 
+                              "Andorra", 
+                              "Angola",
+                              "Australia",
+                              "Austria",
+                              "British",
+                              "Canada",
+                              "Korea, North",
+                              "Korea, South",
+                              "Hong Kong",
+                              "Egypt",
+                              "Japan",
+                              "India",
+                              "Iceland",
+                              "China",
+                              "Ghana"
+                           ];
+        $("#duations").jqxComboBox({ source: duations, selectedIndex: 0, width: '80px', height: '28px' });
+        $('#duations').bind('select', function (event) {
+           var args = event.args;
+           var item = $('#days').jqxComboBox('getItem', args.index);
+                 });         
+       $("#days").jqxComboBox({ source: days, selectedIndex: 0, width: '80px', height: '28px' });
+       $('#days').bind('select', function (event) {
+           var args = event.args;
+           var item = $('#days').jqxComboBox('getItem', args.index);
+       });
+       $("#jqxcombobox").jqxComboBox({ source: source, selectedIndex: 0, width: '120px', height: '25px' });
+       $('#jqxcombobox').bind('select', function (event) {
+           var args = event.args;
+           var item = $('#jqxcombobox').jqxComboBox('getItem', args.index);
+       });
+       $("#sellercountry").jqxComboBox({source:country,selectedIndex: 0, width: '120px', height: '25px'});
+       $('#sellercountry').bind('select', function (event) {
+           var args = event.args;
+           var item = $('#sellercountry').jqxComboBox('getItem', args.index);
+       });
+     
+     
+     $("#mfi2").click(function(){
+    	 var sellername=$("#searchBarMainInput").val();
+    	 $.ajax({ url:"/searchCompetitor",
+    		 data:{sellerName:sellername},
+    		 success:function(seller){
+    	       if(seller.country==null){
+    	    	   $(".noResultsBox").attr("style","display:block");
+    	       }else{
+    	    	   $(".noResultsBox").attr("style","display:none");
+    	    	   $("#viewabr").attr("style","display:block");
+    	    	   $(".search_report_content").attr("style","display:block");
+    	    	   $("#sellername").text(sellername);
+    	    	   $("#country").text(seller.country);
+    	    	   $("#createdate").text(seller.sinceDate);
+    	    	   $("#star").text(seller.star);
+    	       }
+         }});
+     });
+     $("#catch").click(function(){
+    	 doLoading();
+    	 var sellername=$("#searchBarMainInput").val();
+    	 $.ajax({ url:"/catchCompetitor",
+    		 data:{sellerName:sellername},
+    		 success:function(flag){
+    			  doCloseLoading();
+    	       if(flag=="failed"){
+    	    	   alert("Not Find Online,Please Confirm Then Try Aagin");
+    	       }else{
+    	    	   $("#mfi2").click();
+    	       }
+         }});
+     });
+     });
+     $("#testploat").click(function(){
+    	 var sellername=$("#searchBarMainInput").val();
+    	 $.ajax({ url:"/selectRates",
+    		 data:{sellerName:sellername},
+    		 success:function(rates){
+    	       if(rates.sellerName==""){
+    	    	   alert("Not Find Rates");
+    	       }else{
+    	    	 one_positive=rates.one_Positive;
+    	    	 one_netural=rates.one_Neutral;
+    	    	 one_negative=rates.one_Negative;
+    	    	 var data=[["positive",one_positive],["netural",one_netural],["negative",one_negative]];
+    	    	 var plot1 = jQuery.jqplot ('chart1', [data], 
+    	    			    { 
+    	    			      seriesDefaults: {
+    	    			        renderer: jQuery.jqplot.PieRenderer, 
+    	    			        rendererOptions: {
+    	    			          // Put data labels on the pie slices.
+    	    			          // By default, labels show the percentage of the slice.
+    	    			          showDataLabels: true
+    	    			        }
+    	    			      }, 
+    	    			      legend: { show:true, location: 'e' }
+    	    			    }
+    	    			  );
+    	       }
+         }});
+     });
+     $("#testploat1").click(function(){
+    	 var sellername=$("#searchBarMainInput").val();
+    	 $.ajax({ url:"/selectRates",
+    		 data:{sellerName:sellername},
+    		 success:function(rates){
+    	       if(rates.sellerName==""){
+    	    	   alert("Not Find Rates");
+    	       }else{
+    	    	 one_positive=rates.six_Positive;
+    	    	 one_netural=rates.six_Neutral;
+    	    	 one_negative=rates.six_Negative;
+    	    	 var data=[["positive",one_positive],["netural",one_netural],["negative",one_negative]];
+    	    	 var plot1 = jQuery.jqplot ('chart2', [data], 
+    	    			    { 
+    	    			      seriesDefaults: {
+    	    			        renderer: jQuery.jqplot.PieRenderer, 
+    	    			        rendererOptions: {
+    	    			          showDataLabels: true
+    	    			        }
+    	    			      }, 
+    	    			      legend: { show:true, location: 'e' }
+    	    			    }
+    	    			  );
+    	       }
+         }});
+     });
+    $("#specialbt").click(function(){
+    	 var sellername=$("#searchBarMainInput").val();
+    	 $.ajax({ url:"/selectItems",
+    		 data:{sellerName:sellername},
+    		 success:function(items){
+    			 for(var i=0;i<items.length;i++){
+    				 $("#specialItems>tbody").append('<tr><td>'+items[i].itemId+'</td><td>'+items[i].itemName+'</td><td>'+items[i].price+'</td></tr>'); 			    	 
+    			 }
+    			 
+    		 }
+    		 
+    	 });
+    });
+    $("#sellerdto").click(function (){
+    	 var sellername=$("#searchBarMainInput").val();
+         $.ajax({ url:"/selectSingleSeller",
+        	 data:{sellerName:sellername},
+        	 success:function(sellerdto){
+        		 $("#alldays").text(sellerdto.days+'day');
+        		 $("#totalsales").text('$'+sellerdto.totalSales);
+        		 $("#totalcount").text(sellerdto.allAccount);
+        		 $("#successcount").text(sellerdto.successCount);
+        		 $("#failedcount").text(sellerdto.failedCount);
+        		 $("#sellPerday").text('$'+sellerdto.sellPerday);
+        	 }
+         })
+    });
+    $("#monthsell").click(function (){
+    	var sellername=$("#searchBarMainInput").val();
+    	$.ajax({ url:"/selectMonthInfo",
+    		data:{sellerName:sellername},
+    		success:function(data){
+    	    var array2=new Array();
+    		   for(var i=0;i<data.length;i++){
+    			   var name=data[i].months;
+    			   var value=data[i].sellMoney;
+    			   var array1=[name,value];
+    			   array2.push(array1);
+    		   }
+    		 var ploat2=jQuery.jqplot('chart3',[array2],{
+    			  title:'Month SellAmount',
+    			  series:[],
+    			  axesDefaults: {
+    			        tickRenderer: $.jqplot.CanvasAxisTickRenderer ,
+    			        tickOptions: {
+    			          angle: -30,
+    			          fontSize: '10pt'
+    			        }
+    			    },
+    			    axes: {
+    			        xaxis: {
+    			          renderer: $.jqplot.CategoryAxisRenderer
+    			        },yasxis:{
+    			        	 autoscale:true
+    			        }
+    			      }
+    		 })
+    		}
+    	})
+    });
+    $("#daysell").click( function(){
+    	var sellername=$("#searchBarMainInput").val();
+    	var month=$("#chosemonth").val();
+    	$.ajax({ url:"/selectDayInfo",
+    		data:{sellerName:sellername,Month:month},
+    		success:function(data){
+    			var arrey2=new Array();
+    			for(var i=0;i<data.length;i++){
+    				var name=data[i].day;
+    				var value=data[i].sellMoney;
+    				 var array1=[name,value];
+    				arrey2.push(array1);
+    			}
+    			var ploat2=$.jqplot('chart4',[arrey2],{
+    				 title:'Day SellInfo',
+    				  series:[],
+    				  axesDefaults: {
+      			        tickRenderer: $.jqplot.CanvasAxisTickRenderer ,
+      			        tickOptions: {
+      			          angle: -30,
+      			          fontSize: '10pt'
+      			        }
+      			    },
+      			  axes: {
+  			        xaxis: {
+  			          renderer: $.jqplot.CategoryAxisRenderer
+  			        },yasxis:{
+  			        	 autoscale:true
+  			        }
+  			      }
+    			})
+    		}    		
+    	})
+    });
+    $("#weeksell").click(function (){
+    	var sellername=$("#searchBarMainInput").val();
+    	var month=$("#chosemonth").val();
+    	$.ajax({url:"/selectWeekInfo",
+    		data:{sellerName:sellername,Month:month},
+    		success: function (data){
+    			var ticks=['sunday','Monday','tuesday','wednesday','thursday','friday','saturday'];
+    			var s1=new Array();
+    			for(var i=0;i<data.length;i++){
+    				s1.push(data[i].sellMoney);
+    			}
+    			var ploat2=$.jqplot('chart5',[s1],{
+    				seriesDefaults:{
+    					  pointLabels: { show: true },
+    					shadow: false,
+    					  showMarker: true, // 是否强调显示图中的数据节点
+    					  renderer: $.jqplot.BarRenderer,
+    					  rendererOptions: {
+    					  barWidth: 30,
+    					 barMargin: 20
+    				 }
+    				},
+    				 axes:{
+    					  xaxis:{
+    						  renderer: $.jqplot.CategoryAxisRenderer,
+    						  ticks: ticks,
+    						  showTicks: true, 
+    						  showTickMarks: false,
+    						  tickOptions:{
+    							  show: true,
+    							  fontSize: '14px',
+    							  showLabel: true,
+    							  showMark: false,
+    							  showGridline: false
+    						  }
+    					  },
+    					  yaxis:{
+    						  show: true,
+    						  showTicks: true,
+    						   borderWidth: 1
+    					  }
+    				 }
+    			})
+    		}
+    	})
+    });
+    $("#price").click(function (){
+    	var sellername=$("#searchBarMainInput").val();
+    	$.ajax({url:"/selectPring",
+    		data:{sellerName:sellername},
+    		success :function (data){
+    			for(var i=0;i<data.length;i++){
+   				 $("#pringitems>tbody").append('<tr><td>'+data[i].Interval+'</td><td>'+data[i].count+'</td>'); 			    	 
+
+    			}
+    		}
+    	})
+    })
+    
+       /*]]>*/      
+</script>
+</html>

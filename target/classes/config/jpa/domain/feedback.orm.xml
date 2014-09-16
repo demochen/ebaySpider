@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+	<named-query name="List_FeedBack">
+		<query>
+       from  com.ebay.domain.feedback.FeedBack feedback where feedback.sellername=:sellerName
+       </query>
+	</named-query>
+	 <named-query name="SPECIAL_MAX_FEEDBACK">
+		<query>
+        select new com.ebay.domain.item.Item(feedback.itemId,feedback.itemName ,feedback.price) from com.ebay.domain.feedback.FeedBack feedback where price =(select max(price) from com.ebay.domain.feedback.FeedBack feedback  where feedback.sellername=:sellername ) 
+        </query>
+	</named-query>
+	<named-query name="SPECIAL_MIN_FEEDBACK">
+		<query>
+        select new com.ebay.domain.item.Item(feedback.itemId,feedback.itemName ,feedback.price) from com.ebay.domain.feedback.FeedBack feedback where price =(select min(price) from com.ebay.domain.feedback.FeedBack feedback  where feedback.sellername=:sellername ) 
+        </query>
+	</named-query>
+	<named-query name="K_MEANS_PRICE">
+		<query>
+        select new com.ebay.domain.price.PriceDot(feedback.price,count(*)) from com.ebay.domain.feedback.FeedBack feedback where feedback.sellername=:sellername group by price
+        </query>
+	</named-query>
+	<named-query name="MONTH_SELLINFO">
+		<query>
+        select new com.ebay.domain.seller.SellerInfoDto(feedback.sellername,Month(feedback.date),sum(price)) from com.ebay.domain.feedback.FeedBack feedback where feedback.sellername=:sellername group by Month(feedback.date)
+        </query>
+	</named-query>
+	<named-query name="DAY_SELLINFO">
+		<query>
+        select new com.ebay.domain.seller.DaySellDto(feedback.sellername,DAYOFMONTH(feedback.date),sum(price)) from com.ebay.domain.feedback.FeedBack feedback where feedback.sellername=:sellername  and Month(feedback.date)=:months group by DAYOFMONTH(feedback.date)
+        </query>
+	</named-query>
+	<named-query name="WEEK_SELLINFO">
+		<query>
+        select new com.ebay.domain.seller.WeekSellInfo(feedback.sellername,WEEKDAY(feedback.date),sum(price)) from com.ebay.domain.feedback.FeedBack feedback where feedback.sellername=:sellername  and Month(feedback.date)=:months group by WEEKDAY(feedback.date)
+        </query>
+	</named-query>
+	<named-query name="KMEANS_MIN">
+	  <query>
+	  select count(*) from com.ebay.domain.feedback.FeedBack feedback where feedback.sellername=:sellername and price &lt;:min
+	  </query>
+	</named-query>
+	<named-query name="KMEANS_BETWEEN">
+	  <query>
+	  select count(*) from com.ebay.domain.feedback.FeedBack feedback where feedback.sellername=:sellername and price &lt;:max and price &gt;:min
+	  </query>
+	</named-query>
+	<named-query name="KMEANS_MAX">
+	  <query>
+	  select count(*) from com.ebay.domain.feedback.FeedBack feedback where feedback.sellername=:sellername and price &gt;:max  
+	  </query>
+	</named-query>
+	<named-query name="MAX_PRICE">
+	  <query>
+	  select  max(price ) from com.ebay.domain.feedback.FeedBack feedback where feedback.sellername=:sellername 
+	  </query>
+	</named-query>
+	
+</entity-mappings>

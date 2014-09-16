@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Terapeak Product Search</title>
+<link rel="stylesheet" type="text/css" media="all"  th:href="@{/css/home.css}" />
+<link rel="stylesheet" type="text/css" media="all"  th:href="@{/css/product.css}" />
+<link rel="stylesheet" type="text/css" media="all"  th:href="@{/css/jqx.base.css}" />
+<link rel="stylesheet" type="text/css" media="all"  th:href="@{/css/demo_page.css}" />
+<link rel="stylesheet" type="text/css" media="all"  th:href="@{/css/demo_table_jui.css}" />
+<link rel="stylesheet" type="text/css" media="all"  th:href="@{/css/demo_table.css}" />
+
+
+<script type="text/javascript"  th:src="@{/js/jquery-1.10.2.min.js}"></script>
+<script type="text/javascript"  th:src="@{/js/jqxcore.js}"></script>
+<script type="text/javascript"  th:src="@{/js/jqxbuttons.js}"></script>
+<script type="text/javascript"  th:src="@{/js/jqxscrollbar.js}"></script>
+<script type="text/javascript"  th:src="@{/js/jqxlistbox.js}"></script>
+<script type="text/javascript"  th:src="@{/js/jqxcombobox.js}"></script>
+<script type="text/javascript"  th:src="@{/js/jquery.dataTables.js}"></script>
+</head>
+<body>
+<div id="switch-app">  
+      <div id="link-wrapper">
+         <div id="mf0" class="app-link">
+         <img id="mf1" src="../img/tp_ebay_transparent.png"/>
+         <img id="mf1" src="../img/tp_amazon_transparent.png"/>
+         </div>
+      </div>
+   </div>
+    <div id="research_container">
+       <div id="non_header"> 
+         <header th:substituteby="/layout/head" ></header>
+        <div class="pageBackground" style="padding-bottom: 10px;">  
+                <div id="searchBar">
+                   <span class="searchBarContainer dropkick-container">
+                      <span class="inputContainer">
+                         <div class="searchBarLeft icon-search-product"></div>
+                         <input id="keywords" class="text" type="text" placeholder="Search for a product" name="query"/>
+                         <div id="mf53" class="clearSearchForm">
+                              <a id="mfa16" class="icon-search-clear" > </a>
+                         </div>
+                      </span>
+                      <div id="dropdown_container_site_id" class="ui-dropdown-container ui-dropdown-theme-default" tabindex="1">  
+                         <a class="ui-dropdown-toggle btn" ><span>eBayMotors.com</span><p id="mf17" class="ui-dropdown-arrow" ></p></a>  
+                          <div  id="mf18" style="min-width: 230px; display: none;" class="ui-dropdown-options ui-widget-content dropdown-menu">
+                          <ul class="ui-widget-content ui-widget ui-corner-all">
+                                 <li class="ui-state-active ui-dropdown-option unselectable">
+                                    <a data-alt-text="" data-value="100">eBayMotors.com</a>
+                                </li>
+                          </ul>
+                          </div>
+                      </div>
+                      <select tabindex="1" name="siteID" id="site_id" class="dropdown component-base" style="display: none;">
+                          <option selected="selected" value="100">eBayMotors.com</option>
+                      </select>
+                      <input type="submit" id="searchkeywords" value="Go" class="submit btn btn-success"/>
+                    </span>
+                </div>
+          </div>
+        <div class="pageBackground" style="margin-top:10px">
+             <div class="breadcrumb"> 
+                  <div class="category-entry-container">
+	                 <form onsubmit="submitCategoryEntry(jQuery('#category-entry').val(), true); return false;">
+		                Enter Category ID: <input type="text" value="6028" class="category-entry" maxlength="15" id="category-entry" name="id"/>
+		                <input type="submit" value="Go" class="btn btn-info"/>
+		             </form>
+	               </div>
+                  <div class="crumb crumb_0 ">
+							<a id="children_6000" class="bg-gradient-i crumb_heading crumb_ancestor" onclick="javascript:navigateBreadcrumb(6000, jQuery(this).html());return false;" href="">eBay Motors</a>
+								<div class="breadcrumb-divider-wide"></div>
+		          </div>
+                  <div class="crumb crumb_1 ">
+							<a id="children_6028" class="crumb_heading bg-gradient-i" onclick="javascript:return false;" href="">Parts &amp; Accessories</a>
+											<div class="breadcrumb-divider-wide"></div>
+		          </div>
+                  <div class="breadcrumb-section bg-gradient-i">
+				  <div class="crumb crumb_last">
+						<div class="dropkick-container">
+							<div ondragstart="return false;" onselectstart="return false;" tabindex="1" id="dropdown_container_category_select_6028" class="ui-dropdown-container ui-dropdown-theme-cat-breadcrumb">
+							                                    <a class="ui-dropdown-toggle btn">
+							                                    <span>All Categories</span>
+							                                   <p class="ui-dropdown-arrow"></p></a>
+							  </div>
+		                     
+						</div>
+					</div>
+				</div>
+                  <div class="clear"></div>
+             </div>
+         </div>
+        <div id="mainContent">
+           <div id="filterContainer">
+             <div id="filterBar" class="bg-gradient-e">
+               <div class="label" id="mf290">
+			           <a onclick="filterManager.toggleFilterView()" href="javascript:void(0)" id="show-hide">
+			           <div class="icon-filter-bar-show" id="mf291"></div>
+			           <span id="show-hide-text" style="width: 150px;">Show Product Filters</span>
+			           </a>
+		       </div>
+               <div class="filter-button bg-gradient-b" id="apply-filters" style="opacity: 1;">
+                    <a onclick="jQuery('#searchBarForm').submit()" class="title-tooltip" href="javascript:void(0)" id="mfa111">
+                    <i class="icon-ok" id="mf292"></i>Apply Filters</a>
+		       </div> 
+               <div class="filter-button bg-gradient-k" id="mf293">
+		        	<a id="pin-filters" onclick="filterManager.togglePin()" class="title-tooltip" href="javascript:void(0)">
+		        	<i class="icon-pushpin" id="mf294"></i>Pin Panel</a>
+		      </div>
+               <div class="filter-button bg-gradient-k" id="mf295">
+		       	<a onclick="filterManager.removeAll()" id="clear-link" class="title-tooltip" href="javascript:void(0)">
+		       	<i class="icon-ban-circle" id="mf296"></i>Clear Filters</a>
+		      </div>
+               <span id="filter-list"></span>
+               <div style="clear: both;" ></div>
+             </div>
+             <div id="filterDetail" style="display: block;">
+                    <div class="masonryContainer masonry"  style="position: relative; height:170px;">
+                       <div class="filtersMenuItemContainer filtersMenuItemSingleWidth filtersMenuItemDoubleHeight masonry-brick" style="position: absolute; top: 5px; left: 5px;"  >  
+                           <div class="filtersMenuItemHeader">
+                              <div class="filtersMenuItemHeaderIcon icon-filter-listing-type"></div> 
+                              <div class="filtersMenuItemTitle">Listing Type</div>
+                              <div class="filtersMenuItemClear"><a onclick="filterManager.remove(FilterManager.LISTING_TYPE)" href="javascript:void(0)"><i class="icon-ban-circle"></i></a></div>
+                           </div>
+                           <div class="filtersMenuItemContent">
+                            <table>
+                                  <tbody>
+                                     <tr><td>
+                                       <input type="checkbox" value="1" name="type[bid]" id="type_bid"/>Bid Auctions
+								    </td></tr>
+								      <tr><td>
+								      <input type="checkbox" value="1" name="type[dutch]" id="type_dutch"/>Multiple Item
+								    </td></tr>
+								      <tr><td>
+								      <input type="checkbox" value="1" name="type[fixed]" id="type_fixed"/>Fixed Price
+								    </td></tr>
+								      <tr><td>
+								      <input type="checkbox" value="1" name="type[store]" id="type_store"/>Store
+								    </td></tr>
+								      <tr><td>
+								      <input type="checkbox" value="1" name="type[second]" id="type_second"/>Second Chance
+								    </td></tr>
+								      <tr><td>
+								      <input type="checkbox" value="1" name="type[live]" id="type_live"/>Live Auction
+								    </td></tr>
+								   </tbody>
+							</table>
+                           </div>
+					   </div>
+					   <div class="filtersMenuItemContainer filtersMenuItemSingleWidth filtersMenuItemSingleHeight masonry-brick" style="position: absolute; top: 5px; left: 195px;">
+					      <div class="filtersMenuItemHeader">
+					         <div class="filtersMenuItemHeaderIcon icon-filter-price-range"></div>
+                             <div class="filtersMenuItemTitle">Start Price</div>
+                             <div class="filtersMenuItemClear"><a onclick="filterManager.remove(FilterManager.LISTING_TYPE)" href="javascript:void(0)"><i class="icon-ban-circle"></i></a></div>
+					      </div>
+					      <div class="filtersMenuItemContent">
+					           <div style="margin-bottom: 5px">
+					             <input type="text" class="component-base " maxlength="12" size="5" onkeyup="priceValidation(this)" name="from_start_price" id="filter_from_start_price"/>
+                                 to
+                                 <input type="text" class="component-base " maxlength="12" size="5" onkeyup="priceValidation(this)" name="to_start_price" id="filter_to_start_price"/>
+                              </div>
+					      </div>
+					   </div>
+					   <div class="filtersMenuItemContainer filtersMenuItemSingleWidth filtersMenuItemSingleHeight masonry-brick" style="position: absolute; top: 5px; left: 385px;"  >  
+                           <div class="filtersMenuItemHeader">
+                              <div class="filtersMenuItemHeaderIcon icon-filter-price-range"></div>
+                              <div class="filtersMenuItemTitle">End Price</div>
+                              <div class="filtersMenuItemClear"><a onclick="filterManager.remove(FilterManager.END_PRICE)" href="javascript:void(0)"><i class="icon-ban-circle"></i></a></div>
+                           </div>
+                           <div class="filtersMenuItemContent">
+                              <div style="margin-bottom: 5px">
+                                <input type="text" class="component-base " maxlength="12" size="5" onkeyup="priceValidation(this)" name="from_end_price" id="filter_from_end_price"/>
+                                 to 
+                                <input type="text" class="component-base " maxlength="12" size="5" onkeyup="priceValidation(this)" name="to_end_price" id="filter_from_to_end_price"/>
+                              </div>
+                           </div>
+					   </div>
+					   <div class="filtersMenuItemContainer filtersMenuItemSingleWidth filtersMenuItemSingleHeight masonry-brick" style="position: absolute; top: 5px; left: 575px;"  >  
+                            <div class="filtersMenuItemHeader">
+                              <div class="filtersMenuItemHeaderIcon icon-filter-item-condition"></div>
+                              <div class="filtersMenuItemTitle">Item Condition</div>
+                              <div class="filtersMenuItemClear"> <a onclick="filterManager.remove(FilterManager.ITEM_CONDITION)" href="javascript:void(0)"><i class="icon-ban-circle"></i></a></div>	
+                            </div>
+                            <div class="filtersMenuItemContent">
+                              <div style="margin-bottom: 5px;padding-left: 15px">
+                                   <div id="jqxcombobox"></div>
+                              </div>
+                           </div>
+					   </div>
+					   <div class="filtersMenuItemContainer filtersMenuItemSingleWidth filtersMenuItemSingleHeight masonry-brick" style="position: absolute; top: 85px; left: 195px;"  >  
+                           <div class="filtersMenuItemHeader">
+                             <div class="filtersMenuItemHeaderIcon icon-filter-seller-country"></div>
+                             <div class="filtersMenuItemTitle">Seller Country</div>
+                             <div class="filtersMenuItemClear"><a onclick="filterManager.remove(FilterManager.SELLER_COUNTRY)" href="javascript:void(0)"><i class="icon-ban-circle"></i></a> </div>
+                           </div>
+                           <div class="filtersMenuItemContent">
+                            <div style="margin-bottom: 5px;padding-left: 15px">
+                                   <div id="sellercountry"></div>
+                              </div>
+                           </div>
+					   </div>
+					   <div class="filtersMenuItemContainer filtersMenuItemSingleWidth filtersMenuItemSingleHeight masonry-brick" style="position: absolute; top: 85px; left: 385px;"  >  
+                           <div class="filtersMenuItemHeader">
+                              <div class="filtersMenuItemHeaderIcon icon-filter-seller-id"></div>
+                              <div class="filtersMenuItemTitle">Seller ID</div>
+                              <div class="filtersMenuItemClear"><a onclick="filterManager.remove(FilterManager.SELLER_ID)" href="javascript:void(0)"><i class="icon-ban-circle"></i></a></div>
+                           </div>
+                           <div class="filtersMenuItemContent">
+                             <input type="text" class="text" name="sellers" id="seller_id_filter"/>
+                           </div>
+					   </div>
+					   <div class="filtersMenuItemContainer filtersMenuItemSingleWidth filtersMenuItemSingleHeight masonry-brick" style="position: absolute; top: 85px; left: 575px;"  >  
+                           <div class="filtersMenuItemHeader">
+                            <div class="filtersMenuItemHeaderIcon icon-filter-listing-duration"></div>
+                            <div class="filtersMenuItemTitle">Listing Duration</div>
+                            <div class="filtersMenuItemClear"><a onclick="filterManager.remove(FilterManager.LISTING_DURATION)" href="javascript:void(0)"><i class="icon-ban-circle"></i></a></div>
+                           </div>
+                           <div class="filtersMenuItemContent">
+                             <div style="margin-bottom: 5px;padding-left: 15px">
+                                   <div id="days"></div>
+                              </div>
+                           </div>
+					   </div>
+					   <div class="filtersMenuItemContainer filtersMenuItemSingleWidth filtersMenuItemSingleHeight masonry-brick" style="position: absolute; top: 5px; left: 765px;"  >  
+                           <div class="filtersMenuItemHeader">
+                             <div class="filtersMenuItemHeaderIcon icon-filter-transaction-site"></div>
+                             <div class="filtersMenuItemTitle">Transaction Site</div>
+                             <div class="filtersMenuItemClear"><a onclick="filterManager.remove(FilterManager.TRANSACTION_SITE)" href="javascript:void(0)"><i class="icon-ban-circle"></i></a></div>
+                           </div>
+                           <div class="filtersMenuItemContent">
+                             <div style="margin-bottom: 5px;padding-left: 15px">
+                                   <div id="site"></div>
+                               </div>
+                           </div>
+					   </div>
+					</div>
+              </div>
+            </div>
+           <div class="startSearchBox" id="box" style="display:block">Start your search by typing keywords into the box above!</div>
+           <div class="pageBackground" id="pricebox" style="display:none;padding-bottom: 20px;padding-left:50px">
+             <input type="submit" value="Recommend" id="recomend" class="btn btn-info" style="disabled:true"/>
+             <span id="minprice" style="height: 40px; line-height: 40px; width: 150px; border-radius: 5px; background-color:  #5BC0DE; cursor: pointer; display: inline-block; text-align: center;">MinPrice</span>
+             <span id="avgprice" style="height: 40px; line-height: 40px; width: 150px; border-radius: 5px; background-color:  #5BC0DE; cursor: pointer; display: inline-block; text-align: center;">AvgPrice</span>
+             <span id="maxprice" style="height: 40px; line-height: 40px; width: 150px; border-radius: 5px; background-color:  #5BC0DE; cursor: pointer; display: inline-block; text-align: center;">MaxPrice</span>
+             </div>
+             <div id="example_wrapper" class="dataTables_wrapper" role="grid" style="display:none">
+               <table id="example" class="display dataTable" cellpadding="0" cellspacing="0" border="0"  >
+                  <thead>
+                    <tr>
+                     <th>country</th>
+                     <th>galleryURL</th>
+                     <th>itemId</th>
+                     <th>keyWords</th>
+                     <th>price</th>
+                     <th>sellCount</th>
+                     <th>title</th>
+                     <th>viewItemURL</th>
+                   </tr>
+                  </thead>
+               </table>
+            </div>
+        </div>
+        </div>
+        <footer th:substituteby="/layout/footer" ></footer>
+   </div>
+    
+</body>
+<script type="text/javascript"  th:inline="text">
+/*<![CDATA[*/
+     $("#mfa16").click(function (){
+	 $("#keywords").val("");
+	 $("#keywords").blur(); 
+  });
+  $("#mf17").click(function (){
+	  var s1=$("#mf18").attr("display");
+	   alert(s1);
+	  if(s1=="none"){
+		  $("#mf18").attr("display","block");
+	  }else{
+		  $("#mf18").attr("display","none");
+	  }
+  });
+  $(document).ready(function () {
+      var source = [
+          "New",
+          "Refurbished",
+          "Used",
+          "Not Specified"
+      ];
+      var country=[
+                   "APO/FPO",
+                   "Afghanistan",
+                   "American", 
+                   "Andorra", 
+                   "Angola",
+                   "Australia",
+                   "Austria",
+                   "British",
+                   "Canada",
+                   "Korea, North",
+                   "Korea, South",
+                   "Hong Kong",
+                   "Egypt",
+                   "Japan",
+                   "India",
+                   "Iceland",
+                   "China",
+                   "Ghana"
+                ];
+      var duration=[
+                   "1 day",
+                   "3 days",
+                   "5 days", 
+                   "7 days", 
+                   "10 days",
+                   "30 days"
+                ];
+      // Create a jqxComboBox
+      $("#jqxcombobox").jqxComboBox({ source: source, selectedIndex: 0, width: '120px', height: '25px' });
+      // disable the sixth item.
+      //$("#jqxcombobox").jqxComboBox('disableAt', 5);
+      // bind to 'select' event.
+      $("#sellercountry").jqxComboBox({source:country,selectedIndex: 0, width: '120px', height: '25px'});
+      $("#days").jqxComboBox({source: duration,selectedIndex: 0, width: '120px', height: '25px'});
+      $("#site").jqxComboBox({source:["eBayMoto.com"],selectedIndex: 0, width: '120px', height: '25px'});
+      $('#jqxcombobox').bind('select', function (event) {
+          var args = event.args;
+          var item = $('#jqxcombobox').jqxComboBox('getItem', args.index);
+      });
+      $('#sellercountry').bind('select', function (event) {
+          var args = event.args;
+          var item = $('#sellercountry').jqxComboBox('getItem', args.index);
+      });
+      $('#days').bind('select', function (event) {
+          var args = event.args;
+          var item = $('#days').jqxComboBox('getItem', args.index);
+      });
+      $('#site').bind('select', function (event) {
+          var args = event.args;
+          var item = $('#site').jqxComboBox('getItem', args.index);
+      });
+  });
+  $("#searchkeywords").click(function (){
+	  var keywords=$("#keywords").val();
+	  $.ajax({url:"/searchItems",
+		    data:{keyWords:keywords},
+		    success: function(data){
+		    	$("#pricebox").attr("style","display:block;padding-bottom: 10px;padding-left:200px;padding-top: 10px;");
+		    	$("#box").attr("style","display:none");
+		    	$("#example_wrapper").attr("style","display:block");
+		    	var html="";
+		    	$('#example').dataTable({
+	    			"bRetrieve": true,	
+	    			 "bDestroy":true,
+	    			 "sPaginationType":"full_numbers"
+	    		});
+		    	if(!data||data.length==0){
+		    		$("#example tbody").html('<tr><td style="text-align:center; colspan:2">NO DATA</td></tr>')
+		    	    return;
+		    	}
+		    	for(var i=0;i<data.length;i++){
+		    		html+='<tr>'+
+		    		  '<td>'+data[i].country+'</td>'+
+		    		  '<td> <img src="'+data[i].galleryURL+'"'+'</img>'+'+</td>'+
+		    		  '<td>'+data[i].itemId+'</td>'+
+		    		  '<td>'+data[i].keyWords+'</td>'+
+		    		  '<td>'+data[i].price+'</td>'+
+		    		  '<td>'+data[i].sellCount+'</td>'+
+		    		  '<td>'+data[i].title+'</td>'+
+		    		  '<td> <a href="'+data[i].viewItemURL+'"'+'>'+' View Item </a>'+'</td>'+
+		    		  '</tr>'
+		    	}
+		    	$("#example tbody").html(html);
+		    }
+		  
+	  })
+  });
+  $("#recomend").click(function (){
+	  var keywords=$("#keywords").val();
+	  $.ajax({url:"/getRecomendPrices",
+		  data:{keyWords:keywords},
+		  success:function(data){
+		
+			$("#minprice").html('MinPrice:'+data.minPrice);
+		
+			$("#maxprice").html('AvgPrice:'+data.avgPrice);
+		
+			$("#avgprice").html('MaxPrice:'+data.maxPrice);
+		  }
+	  })
+  })
+  
+  /*]]>*/
+</script>
+</html>

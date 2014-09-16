@@ -1,0 +1,29 @@
+#filterBar {
+    border: 1px solid #AEAEAE;
+    padding: 0;
+    position: relative;
+}
+#filterBar div.label {
+    display: block;
+    float: left;
+    height: 100%;
+    margin-right: 20px;
+}
+#filterBar .filter-button {
+    border: 1px solid #AEAEAE;
+    float: right;
+    height: 30px;
+    line-height: 30px;
+    margin: -1px -1px -1px 5px;
+    position: relative;
+}
+
+#filterBar .filter-button a {
+    padding: 0 10px !important;
+}
+#filterBar .filter-button a {
+    display: block;
+    padding-left: 30px;
+    padding-right: 18px;
+    text-decoration: none;
+}

@@ -1,0 +1,75 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0px; padding: 0px; border: 0px none; font: inherit; vertical-align: baseline; }
+body { line-height: 1; }
+html, body { height: 100%; }
+body { margin: 0px;
+padding: 0px;
+font-family: "nimbus-sans",sans-serif;
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 1.2em;
+min-width: 650px;
+background: radial-gradient(ellipse at center center , #73DCFF 0%, #73DCFF 28%, #00A0D7 100%) no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+color: rgb(51, 51, 51);
+}
+.wrapper { position: relative; padding-top: 50px; height: auto ! important; min-height: 400px; background: none repeat scroll 0px 0px transparent; }
+.container { margin: 0px auto; position: relative; width: 590px; display: block; height: auto; text-align: center; }
+div.header_logo { position: relative; margin: 0px auto 10px; width: 291px; height: 181px; display: block; background: url('../img/logo-login-white.png') no-repeat scroll 0% 0% transparent; cursor: pointer; }
+.row { clear: both; padding-bottom: 10px; }
+.inputs { width: 485px; display: block; float: left; position: relative; }
+.action { width: 120px; display: block; position: absolute; right: 0px; top: 50%; float: left; margin-top: -20px; }
+.login_form, .email_reset_form { padding-bottom: 12px; }
+.login_form label, .email_reset_form label { position: relative; float: left; padding: 10px 0px 0px; width: 175px; font-weight: bold; text-align: right; color: rgb(101, 101, 101); font-size: 12px; clear: none; }
+.login_form input.text, .email_reset_form input.text { position: relative; float: left; width: 267px; margin: 5px 0px 10px 10px; padding: 4px; border: 1px solid rgb(189, 189, 189); font-size: 14px;border-radius:4px}
+.login_form input.submit, .email_reset_form input.submit { float: left; height: 35px; width: 98px; border: 1px solid rgb(153, 153, 153); font-size: 12px; font-weight: bold; color: rgb(0, 102, 0); }
+input.submit { float: left; height: 35px; width: 98px; border: 1px solid rgb(153, 153, 153); font-size: 12px; font-weight: bold; color: rgb(0, 102, 0); }
+.clear { width: 100%; position: relative; clear: both; overflow: hidden; float: none; display: block; height: 0px; }
+h1 { font-weight: bold; font-size: 12px; text-align: center; margin: 0px; padding: 0px; line-height: normal; color: rgb(15, 79, 108); }
+.description { font-size: 11px; text-align: center; color: rgb(15, 79, 108); padding: 6px 0px 30px; }
+label, input, button, select, textarea { font-size: 14px; font-weight: normal; line-height: 20px; }
+input, button, select, textarea { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; }
+label { display: block; margin-bottom: 5px; }
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input { display: inline-block; padding: 4px 6px; margin-bottom: 10px; font-size: 14px; line-height: 20px; color: rgb(85, 85, 85); vertical-align: middle; border-radius: 4px; }
+input, textarea, .uneditable-input { width: 206px; }
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input { background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset; transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s; border-radius:4px}
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus { border-color: rgba(82, 168, 236, 0.8); outline: 0px none; box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(82, 168, 236, 0.6); }
+input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] { width: auto; }
+button.btn::-moz-focus-inner, input.btn[type="submit"]::-moz-focus-inner { padding: 0px; border: 0px none; }
+/* ::::: https://signup.terapeak.com/layout/generated-css/gradients.css ::::: */
+.error.arrow:after {
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    border-right: 10px solid rgba(0, 0, 0, 0);
+    border-top: 10px solid #FBC7C6;
+    bottom: -10px;
+    content: " ";
+    display: block;
+    left: 50%;
+    margin-left: -10px;
+    position: absolute;
+}
+.error {
+    background: none repeat scroll 0 0 #FDDFDE;
+    border: 2px solid #FBC7C6;
+    border-radius: 8px;
+    bottom: 105%;
+    box-shadow: 0 2px 1px #FFFFFF;
+    color: #C43C35;
+    font-size: 13px;
+    left: 27%;
+    padding: 6px;
+    position: absolute;
+    text-align: center;
+    width: 260px;
+    z-index: 10;
+}
+.success {
+    float: none;
+    margin: 30px auto 0;
+    text-align: center;
+    width: 250px;
+    background: url("../img/ok.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+    padding: 100px 0 0;
+}
+.bg-gradient-a, a.bg-gradient-a, a.bg-gradient-a:visited { background: linear-gradient(rgb(215, 236, 173), rgb(151, 209, 76)) repeat scroll 0% 0% rgb(151, 209, 76); color: rgb(62, 94, 20); text-shadow: 1px 1px 1px rgb(215, 236, 173); }
+.bg-gradient-a.force-hover, a.bg-gradient-a:hover, a:hover > .bg-gradient-a, input.bg-gradient-a:hover { background: linear-gradient(rgb(181, 222, 121), rgb(181, 222, 121)) repeat scroll 0% 0% rgb(181, 222, 121); color: rgb(62, 94, 20); cursor: pointer; }
+.bg-gradient-a.active, .bg-gradient-a > .active, a.active.bg-gradient-a:visited, .bg-gradient-a.active:hover, .bg-gradient-a > a.active:hover, .bg-gradient-a > a:active:hover, a.bg-gradient-a:active:hover, input.bg-gradient-a:active { background: linear-gradient(rgb(151, 209, 76), rgb(215, 236, 173)) repeat scroll 0% 0% rgb(112, 166, 43); color: rgb(62, 94, 20); text-shadow: none; box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3) inset; }

@@ -1,0 +1,172 @@
+.widget_draggable {
+    cursor: move;
+}
+.noResultsBox {
+    width: 96.5%;
+}
+.noResultsBox {
+    border: 2px solid #BBBBBB;
+    margin: 0;
+    padding: 5px 15px;
+    width: 926px;
+}
+.view-bar-container {
+    border: 0 solid #CCCCCC;
+    margin-bottom: 10px;
+}
+.icon-view-overview {
+    background-position: 0 -5944px;
+    height: 24px;
+    width: 24px;
+}
+.view-bar-section {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    border-right: 1px solid #CCCCCC;
+    float: left;
+    padding: 0 5px;
+}
+.view-bar {
+    display: inline-block;
+    line-height: 26px;
+    vertical-align: middle;
+    width: 100%;
+}
+.view-bar.alert {
+    margin: 0;
+    padding: 0;
+}
+.alert-info {
+    background-color: #D9EDF7;
+    border-color: #BCE8F1;
+    color: #3A87AD;
+}
+.view-bar .component-text {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.view-bar .component-base {
+    float: left;
+    line-height: 29px;
+    margin-right: 3px;
+    vertical-align: middle;
+}
+.icon-view-list{
+	background-position: 0 -5736px;
+    height: 24px;
+    width: 24px;
+}
+.icon-view-trend {
+    background-position: 0 -6376px;
+    height: 24px;
+    width: 24px;
+}
+.icon-view-top-titles {
+    background-position: 0 -6216px;
+    height: 24px;
+    width: 24px;
+}
+.icon-metric-sell-through {
+    background-position: 0 -3416px;
+    height: 24px;
+    width: 24px;
+}
+.icon-metric-average-price {
+    background-position: 0 -3320px;
+    height: 24px;
+    width: 24px;
+}
+ .icon-metric-total-listings {
+    background-position: 0 -3608px;
+    height: 24px;
+    width: 24px;
+}
+.icon-metric-table {
+    background-position: 0 -3512px;
+    height: 24px;
+    width: 24px;
+}
+.icon-action-save {
+    background-position: 0 -1224px;
+    height: 24px;
+    width: 24px;
+}
+.icon-action-excel {
+    background-position: 0 -936px;
+    height: 24px;
+    width: 24px;
+}
+.icon-action-pdf {
+    background-position: 0 -1032px;
+    height: 24px;
+    width: 24px;
+}
+.icon-action-pin-vt {
+    background-position: 0 -1128px;
+    height: 24px;
+    width: 24px;
+}
+
+#CommenInfo{
+	float:left;
+	width:32.5%;
+}
+#RecenetOne{
+	float:left;
+	width:32.5%;
+}
+div.fusion_table_div {
+    height: 250px;
+    overflow: scroll;
+}
+.widget_content {
+    background-color: #F8F8F8;
+    border-right: 1px solid #CCCCCC;
+    font: 12px/1em Tahoma,Arial,sans-serif;
+    height: 250px;
+    overflow: hidden;
+}
+.table.sub_content {
+    border-collapse: collapse;
+    width: 99.9%;
+}
+TD {
+    color: #333333;
+    font-family: "pragmatica-web",sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.view-bar-title {
+    color: #006997;
+    float: right;
+    font-weight: bold;
+    padding: 0 8px;
+    text-shadow: 1px 1px 0 #FFFFFF;
+}
+#widget_col_0{
+	float: left;
+    width: 32.5%;
+}
+#widget_col_1{
+	 float: left;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
+    width: 32.5%;
+}
+#widget_col_2{
+	 float: right;
+    width: 32.5%;
+}
+table.stats {
+    border-collapse: collapse;
+    position: absolute;
+    width: 100%;
+}
+
+table.stats tr th {
+    font-weight: bold;
+    text-align: left;
+}
+table.stats th {
+    padding: 2px 6px;
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+	<named-query name="SELECT_BY_NAME">
+		<query>
+          select count(*) from com.ebay.domain.user.User user where user.userName=:userName
+      </query>
+	</named-query>
+
+	<named-query name="SELECT_BY_NAME_PASSWORD">
+		<query>
+         select count(*) from  com.ebay.domain.user.User user where user.userName =:userName and user.passWord =:passWord
+      </query>
+	</named-query>
+  
+  
+    <named-query name="GET_PASSWORD_BY_NAME">
+    <query>
+       select user.passWord from com.ebay.domain.user.User user where user.userName=:userName
+    </query>
+    </named-query>
+</entity-mappings>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+	<named-query name="SELECT_BY_SELLERNAME">
+		<query>
+          select count(*) from com.ebay.domain.seller.SellerImpl seller where seller.SellerName=:sellerName
+      </query>
+	</named-query>
+	
+	<named-query name="SELECTSELLER_BY_SELLERNAME">
+		<query>
+          select seller from com.ebay.domain.seller.SellerImpl seller where seller.SellerName=:sellerName
+      </query>
+	</named-query>
+    <named-query name="SELECTSELLER_BY_AllDays">
+		<query>
+          select TO_DAYS(max(Feed_Date))-TO_DAYS(min(Feed_Date)) from com.ebay.domain.feedback.FeedBack feedback  where feedback.sellername=:sellername
+      </query>
+	</named-query>
+	  <named-query name="SELECT_BY_TOTALSELL">
+		<query>
+          select sum(price) from com.ebay.domain.feedback.FeedBack feedback where feedback.sellername=:sellerName GROUP  by feedback.sellername
+      </query>
+	</named-query>
+	  <named-query name="SELECT_BY_SUCCESSSELL">
+		<query>
+             select count(*) from com.ebay.domain.feedback.FeedBack feedback where feedback.sellername=:sellerName and  feedback.attitude=:attitude GROUP  by feedback.sellername   
+        </query>
+	</named-query>
+  	
+</entity-mappings>

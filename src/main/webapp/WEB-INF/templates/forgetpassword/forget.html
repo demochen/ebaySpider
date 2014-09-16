@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Forget Password</title>
+  <link rel="stylesheet" type="text/css"  th:href="@{/css/forget.css}" media="all"/>
+  <script type="text/javascript"  th:src="@{/js/jquery.min.js}"></script>
+</head>
+ <body>
+     <div class="wrapper">
+         <a href="ebay">
+           <div class="header_logo"></div> 
+        </a>
+         <h1>Forget your Password?</h1>
+         <p class="description">
+          Please enter the e-mail you use to sign in into the box below and<br/>
+          we will send you instructions to reset your password.
+         </p>
+         <form class="login_form" method="post" action="/sendemail">
+                 <div class="container" th:if="${SUCCESS eq null}">
+                    <div style="" class="error arrow" th:if="${ ERROR ne null}">Member Not Found</div>
+                      <div class="inputs">
+                          <div class="row">
+                                  <label title="Email Address" for="email" >Email Address</label>
+                                  <input id="email" class="text" tabindex="1" name="email"/>
+                           </div>
+                           <div class="clear">
+                            </div>
+                      </div>	
+                    <div class="action">
+                      <input class="unselectable submit bg-gradient-a" type="submit" tabindex="1" value="Submit"/>
+                    </div>
+                    <div class="clear"></div>
+                </div>         
+                  <div class="success" th:if="${SUCCESS ne null }">
+                     PassWord has Sent <span th:text="${emailaddress}"></span>
+                    </div>
+          </form>
+          <div style="text-align: center"> 
+          <input class="submit bg-gradient-a" type="Button" onclick="window.location = 'ebay'" value="Go to Login Page" style="float:none;width:200px"/>
+          </div> 
+     </div>   
+</body>
+</html>
